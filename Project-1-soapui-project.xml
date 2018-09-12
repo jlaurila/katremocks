@@ -1,0 +1,3813 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="ca9e3bd9-eb33-48a5-b180-335c885217fb" activeEnvironment="Default" name="Project1" resourceRoot="" soapui-version="5.4.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="b5ca0475-3a49-432d-88a9-8e8be217783a" wsaVersion="NONE" name="WageReportQuerySoap" type="wsdl" bindingName="{http://www.tulorekisteri.fi/WageReportQueryService}WageReportQuerySoap" soapVersion="1_1" anonymous="optional" definition="file:/C:/Users/YAJALA/Downloads/incomesregister_api_technicalspecification_v1.07/IncomesRegister_API_TechnicalSpecification_v1.07/WSDL/WageReportQueryService.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="file:/C:/Users/YAJALA/Downloads/incomesregister_api_technicalspecification_v1.07/IncomesRegister_API_TechnicalSpecification_v1.07/WSDL/WageReportQueryService.wsdl"><con:part><con:url>file:/C:/Users/YAJALA/Downloads/incomesregister_api_technicalspecification_v1.07/IncomesRegister_API_TechnicalSpecification_v1.07/WSDL/WageReportQueryService.wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="WageReportQueryService" targetNamespace="http://www.tulorekisteri.fi/WageReportQueryService" xmlns:tns="http://www.tulorekisteri.fi/WageReportQueryService" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:irct="http://www.tulorekisteri.fi/2017/1/IRCommonTypes" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mst="http://www.tulorekisteri.fi/2017/1/MainSubscriptionTypes" xmlns:drtir="http://www.tulorekisteri.fi/2017/1/DataRequestToIR" xmlns:wrfir="http://www.tulorekisteri.fi/2017/1/WageReportsFromIR" xmlns:wrfirt="http://www.tulorekisteri.fi/2017/1/WageReportsFromIRTypes" xmlns:smt="http://www.tulorekisteri.fi/2017/1/StatusMessageTypes">
+  <wsdl:types>
+    <xs:schema>
+      <xs:import namespace="http://www.tulorekisteri.fi/2017/1/DataRequestToIR" schemaLocation="DataRequestToIR.xsd"/>
+    </xs:schema>
+    <xs:schema>
+      <xs:import namespace="http://www.tulorekisteri.fi/2017/1/WageReportsFromIR" schemaLocation="WageReportsFromIR.xsd"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="WageReportsOneIncomeEarnerMessage">
+    <wsdl:part name="in" element="drtir:WageReportsOneIncomeEarnerRequestToIR"/>
+  </wsdl:message>
+  <wsdl:message name="WageReportsOnePayerMessage">
+    <wsdl:part name="in" element="drtir:WageReportsOnePayerRequestToIR"/>
+  </wsdl:message>
+  <wsdl:message name="WageReportsOnePolicyNoMessage">
+    <wsdl:part name="in" element="drtir:WageReportsOnePolicyNoRequestToIR"/>
+  </wsdl:message>
+  <wsdl:message name="WageReportsFromIR">
+    <wsdl:part name="out" element="wrfir:WageReportsFromIR"/>
+  </wsdl:message>
+  <wsdl:portType name="WageReportQueryPort">
+    <wsdl:operation name="GetWageReportsOneIncomeEarner">
+      <wsdl:input message="tns:WageReportsOneIncomeEarnerMessage"/>
+      <wsdl:output message="tns:WageReportsFromIR"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetWageReportsOnePayer">
+      <wsdl:input message="tns:WageReportsOnePayerMessage"/>
+      <wsdl:output message="tns:WageReportsFromIR"/>
+    </wsdl:operation>
+    <wsdl:operation name="GetWageReportsOnePolicyNo">
+      <wsdl:input message="tns:WageReportsOnePolicyNoMessage"/>
+      <wsdl:output message="tns:WageReportsFromIR"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WageReportQuerySoap" type="tns:WageReportQueryPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="GetWageReportsOneIncomeEarner">
+      <soap:operation soapAction="GetWageReportsOneIncomeEarner" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWageReportsOnePayer">
+      <soap:operation soapAction="GetWageReportsOnePayer" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetWageReportsOnePolicyNo">
+      <soap:operation soapAction="GetWageReportsOnePolicyNo" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WageReportQueryService">
+    <wsdl:port name="WageReportQueryService" binding="tns:WageReportQuerySoap">
+      <soap:address location="https://localhost/20170526/WageReportQueryService.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>file:\C:\Users\YAJALA\Downloads\incomesregister_api_technicalspecification_v1.07\IncomesRegister_API_TechnicalSpecification_v1.07\WSDL\DataRequestToIR.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.tulorekisteri.fi/2017/1/DataRequestToIR" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:drtir="http://www.tulorekisteri.fi/2017/1/DataRequestToIR" xmlns:irct="http://www.tulorekisteri.fi/2017/1/IRCommonTypes" xmlns:mst="http://www.tulorekisteri.fi/2017/1/MainSubscriptionTypes">
+  <xs:import namespace="http://www.tulorekisteri.fi/2017/1/MainSubscriptionTypes" schemaLocation="MainSubscriptionTypes.xsd"/>
+  <xs:element name="MessagesRequestToIR" type="mst:DataRequestToIR"/>
+  <xs:element name="PayerSummaryReportsOnePayerRequestToIR" type="mst:DataRequestToIR"/>
+  <xs:element name="PayerSummaryReportsOnePolicyNoRequestToIR" type="mst:DataRequestToIR"/>
+  <xs:element name="WageReportsOneIncomeEarnerRequestToIR" type="mst:DataRequestToIR"/>
+  <xs:element name="WageReportsOnePayerRequestToIR" type="mst:DataRequestToIR"/>
+  <xs:element name="WageReportsOnePolicyNoRequestToIR" type="mst:DataRequestToIR"/>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\YAJALA\Downloads\incomesregister_api_technicalspecification_v1.07\IncomesRegister_API_TechnicalSpecification_v1.07\WSDL\MainSubscriptionTypes.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.tulorekisteri.fi/2017/1/MainSubscriptionTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mst="http://www.tulorekisteri.fi/2017/1/MainSubscriptionTypes" xmlns:irct="http://www.tulorekisteri.fi/2017/1/IRCommonTypes" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+  <xs:import namespace="http://www.tulorekisteri.fi/2017/1/IRCommonTypes" schemaLocation="IRCommonTypes.xsd"/>
+  <xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="xmldsig-core-schema.xsd"/>
+  <xs:simpleType name="Day">
+    <xs:restriction base="mst:DaysType"/>
+  </xs:simpleType>
+  <xs:simpleType name="DaysType">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+      <xs:enumeration value="4"/>
+      <xs:enumeration value="5"/>
+      <xs:enumeration value="6"/>
+      <xs:enumeration value="7"/>
+      <xs:enumeration value="8"/>
+      <xs:enumeration value="9"/>
+      <xs:enumeration value="10"/>
+      <xs:enumeration value="11"/>
+      <xs:enumeration value="12"/>
+      <xs:enumeration value="13"/>
+      <xs:enumeration value="14"/>
+      <xs:enumeration value="15"/>
+      <xs:enumeration value="16"/>
+      <xs:enumeration value="17"/>
+      <xs:enumeration value="18"/>
+      <xs:enumeration value="19"/>
+      <xs:enumeration value="20"/>
+      <xs:enumeration value="21"/>
+      <xs:enumeration value="22"/>
+      <xs:enumeration value="23"/>
+      <xs:enumeration value="24"/>
+      <xs:enumeration value="25"/>
+      <xs:enumeration value="26"/>
+      <xs:enumeration value="27"/>
+      <xs:enumeration value="28"/>
+      <xs:enumeration value="29"/>
+      <xs:enumeration value="30"/>
+      <xs:enumeration value="31"/>
+      <xs:enumeration value="32"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Month">
+    <xs:restriction base="irct:MonthsType"/>
+  </xs:simpleType>
+  <xs:complexType name="CodeItem">
+    <xs:sequence>
+      <xs:element name="IdType" type="xs:int" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="IdCode" type="irct:String30" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="IdCountryCode" type="irct:String2" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="SubscriptionParameters" type="mst:SubscriptionParameters" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CodeItems">
+    <xs:sequence>
+      <xs:element name="CodeItem" type="mst:CodeItem" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DailySchedule">
+    <xs:sequence>
+      <xs:element name="QueryStartTime" type="mst:QueryStartTime" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DataRequestToIR">
+    <xs:sequence>
+      <xs:element name="Timestamp" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="QueryDataType" type="xs:int" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="QueryProfile" type="irct:String40" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="IncludeAllVersions" type="irct:trueOrFalse" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ProductionEnvironment" type="irct:trueOrFalse" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DeliveryDataOwner" type="mst:Id" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DeliveryDataCreator" type="mst:Id" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DeliveryDataSender" type="mst:Id" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DataRequestParameters" type="mst:DataRequestParameters" minOccurs="0" maxOccurs="1"/>
+      <xs:element ref="ds:Signature" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DataRequestParameters">
+    <xs:sequence>
+      <xs:element name="ValueParameter" type="mst:ValueParameter" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="TimespanParameter" type="mst:TimespanParameter" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="TimespanTimeParameter" type="mst:TimespanTimeParameter" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="IdCodeParameter" type="mst:IdCodeParameter" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SubscriptionsToIR">
+    <xs:sequence>
+      <xs:element name="DeliveryData" type="mst:DeliveryData" minOccurs="1" maxOccurs="1"/>
+      <xs:element ref="ds:Signature" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Days">
+    <xs:sequence>
+      <xs:element name="Day" type="mst:Day" minOccurs="1" maxOccurs="32"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeliveryData">
+    <xs:sequence>
+      <xs:element name="Timestamp" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DeliveryDataType" type="xs:int" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DeliveryId" type="irct:String40" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ProductionEnvironment" type="irct:trueOrFalse" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DeliveryDataOwner" type="mst:Id" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DeliveryDataCreator" type="mst:Id" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DeliveryDataSender" type="mst:Id" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="MainSubscription" type="mst:MainSubscription" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeliverySchedule">
+    <xs:sequence>
+      <xs:element name="QueryStartTime" type="mst:QueryStartTime" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Id">
+    <xs:sequence>
+      <xs:element name="Type" type="xs:int" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Code" type="irct:String30" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="CountryCode" type="irct:String2" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CountryName" type="irct:String70" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IdCodeList">
+    <xs:sequence>
+      <xs:element name="CodeListType" type="xs:int" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="CodeItems" type="mst:CodeItems" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IdCodeParameter">
+    <xs:sequence>
+      <xs:element name="ParameterType" type="xs:int" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="IdType" type="xs:int" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="IdCode" type="irct:String30" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="IdCountryCode" type="irct:String2" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MainSubscription">
+    <xs:sequence>
+      <xs:element name="MainSubscriptionId" type="irct:String40" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DeliveryChannelCode" type="xs:int" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="SubscriptionType" type="xs:int" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ValidFrom" type="xs:date" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ValidUntil" type="xs:date" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ModifiedTimespanStart" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ModifiedTimespanEnd" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Subscriptions" type="mst:Subscriptions" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Schedule" type="mst:Schedule" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MonthlySchedule">
+    <xs:complexContent>
+      <xs:extension base="mst:DeliverySchedule">
+        <xs:sequence>
+          <xs:element name="Days" type="mst:Days" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="Months" type="mst:Months" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Months">
+    <xs:sequence>
+      <xs:element name="Month" type="mst:Month" minOccurs="1" maxOccurs="12"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OnetimeDeliverySchedule">
+    <xs:sequence>
+      <xs:element name="Time" type="xs:time" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="QueryStartTime">
+    <xs:sequence>
+      <xs:element name="Time" type="xs:time" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RecurringDeliverySchedule">
+    <xs:choice>
+      <xs:element name="MonthlySchedule" type="mst:MonthlySchedule" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="WeeklySchedule" type="mst:WeeklySchedule" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DailySchedule" type="mst:DailySchedule" minOccurs="1" maxOccurs="1"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="Schedule">
+    <xs:choice>
+      <xs:element name="RecurringDeliverySchedule" type="mst:RecurringDeliverySchedule" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="OnetimeDeliverySchedule" type="mst:OnetimeDeliverySchedule" minOccurs="1" maxOccurs="1"/>
+    </xs:choice>
+  </xs:complexType>
+  <xs:complexType name="Subscription">
+    <xs:sequence>
+      <xs:element name="SubscriptionId" type="irct:String40" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="QueryDataType" type="xs:int" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="QueryProfile" type="irct:String40" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="IncludeAllVersions" type="irct:trueOrFalse" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="QueryDataSchemaVersion" type="irct:String200" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="SubscriptionParameters" type="mst:SubscriptionParameters" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="IdCodeList" type="mst:IdCodeList" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SubscriptionParameters">
+    <xs:sequence>
+      <xs:element name="TimespanParameter" type="mst:TimespanParameter" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="IdCodeParameter" type="mst:IdCodeParameter" minOccurs="0" maxOccurs="unbounded"/>
+      <xs:element name="ValueParameter" type="mst:ValueParameter" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Subscriptions">
+    <xs:sequence>
+      <xs:element name="Subscription" type="mst:Subscription" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TimespanParameter">
+    <xs:sequence>
+      <xs:element name="ParameterType" type="xs:int" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="StartDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="EndDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TimespanTimeParameter">
+    <xs:sequence>
+      <xs:element name="ParameterType" type="xs:int" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="StartDate" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="EndDate" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ValueParameter">
+    <xs:sequence>
+      <xs:element name="ParameterType" type="xs:int" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Value" type="irct:String100" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WeeklySchedule">
+    <xs:complexContent>
+      <xs:extension base="mst:DeliverySchedule">
+        <xs:sequence>
+          <xs:element name="Monday" type="irct:trueOrFalse" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="Tuesday" type="irct:trueOrFalse" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="Wednesday" type="irct:trueOrFalse" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="Thursday" type="irct:trueOrFalse" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="Friday" type="irct:trueOrFalse" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="Saturday" type="irct:trueOrFalse" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="Sunday" type="irct:trueOrFalse" minOccurs="1" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\YAJALA\Downloads\incomesregister_api_technicalspecification_v1.07\IncomesRegister_API_TechnicalSpecification_v1.07\WSDL\IRCommonTypes.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.tulorekisteri.fi/2017/1/IRCommonTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:irct="http://www.tulorekisteri.fi/2017/1/IRCommonTypes">
+  <xs:simpleType name="trueOrFalse">
+    <xs:restriction base="xs:boolean">
+      <xs:pattern value="true"/>
+      <xs:pattern value="false"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="decimal2">
+    <xs:restriction base="xs:decimal">
+      <xs:pattern value="[+-]?\d{1,13}(\.\d{1,2})?"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Guid">
+    <xs:restriction base="xs:normalizedString">
+      <xs:pattern value="[0-9a-fA-F]{32}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="MonthsType">
+    <xs:restriction base="xs:int">
+      <xs:enumeration value="1"/>
+      <xs:enumeration value="2"/>
+      <xs:enumeration value="3"/>
+      <xs:enumeration value="4"/>
+      <xs:enumeration value="5"/>
+      <xs:enumeration value="6"/>
+      <xs:enumeration value="7"/>
+      <xs:enumeration value="8"/>
+      <xs:enumeration value="9"/>
+      <xs:enumeration value="10"/>
+      <xs:enumeration value="11"/>
+      <xs:enumeration value="12"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="PensionPolicyNo">
+    <xs:restriction base="xs:normalizedString">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="11"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String10">
+    <xs:restriction base="xs:normalizedString">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="10"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String100">
+    <xs:restriction base="xs:normalizedString">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="100"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String15">
+    <xs:restriction base="xs:normalizedString">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="15"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String2">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="2"/>
+      <xs:maxLength value="2"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String20">
+    <xs:restriction base="xs:normalizedString">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="20"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String200">
+    <xs:restriction base="xs:normalizedString">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="200"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String30">
+    <xs:restriction base="xs:normalizedString">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="30"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String40">
+    <xs:restriction base="xs:normalizedString">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="40"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String4000">
+    <xs:restriction base="xs:string">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="4000"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String5">
+    <xs:restriction base="xs:normalizedString">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="5"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String50">
+    <xs:restriction base="xs:normalizedString">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="50"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String500">
+    <xs:restriction base="xs:normalizedString">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="500"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="String70">
+    <xs:restriction base="xs:normalizedString">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="70"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="true">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="true"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\YAJALA\Downloads\incomesregister_api_technicalspecification_v1.07\IncomesRegister_API_TechnicalSpecification_v1.07\WSDL\xmldsig-core-schema.xsd</con:url><con:content><![CDATA[<!--Schema for XML Signatures
+    http://www.w3.org/2000/09/xmldsig#
+    $Revision: 1.1 $ on $Date: 2002/02/08 20:32:26 $ by $Author: reagle $
+
+    Copyright 2001 The Internet Society and W3C (Massachusetts Institute
+    of Technology, Institut National de Recherche en Informatique et en
+    Automatique, Keio University). All Rights Reserved.
+    http://www.w3.org/Consortium/Legal/
+
+    This document is governed by the W3C Software License [1] as described
+    in the FAQ [2].
+
+    [1] http://www.w3.org/Consortium/Legal/copyright-software-19980720
+    [2] http://www.w3.org/Consortium/Legal/IPR-FAQ-20000620.html#DTD-->
+<schema targetNamespace="http://www.w3.org/2000/09/xmldsig#" elementFormDefault="qualified" version="0.1" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+  <!--Basic Types Defined for Signatures-->
+  <simpleType name="CryptoBinary">
+    <restriction base="base64Binary"/>
+  </simpleType>
+  <!--Start Signature-->
+  <element name="Signature" type="ds:SignatureType"/>
+  <complexType name="SignatureType">
+    <sequence>
+      <element ref="ds:SignedInfo"/>
+      <element ref="ds:SignatureValue"/>
+      <element ref="ds:KeyInfo" minOccurs="0"/>
+      <element ref="ds:Object" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+    <attribute name="Id" type="ID" use="optional"/>
+  </complexType>
+  <element name="SignatureValue" type="ds:SignatureValueType"/>
+  <complexType name="SignatureValueType">
+    <simpleContent>
+      <extension base="base64Binary">
+        <attribute name="Id" type="ID" use="optional"/>
+      </extension>
+    </simpleContent>
+  </complexType>
+  <!--Start SignedInfo-->
+  <element name="SignedInfo" type="ds:SignedInfoType"/>
+  <complexType name="SignedInfoType">
+    <sequence>
+      <element ref="ds:CanonicalizationMethod"/>
+      <element ref="ds:SignatureMethod"/>
+      <element ref="ds:Reference" maxOccurs="unbounded"/>
+    </sequence>
+    <attribute name="Id" type="ID" use="optional"/>
+  </complexType>
+  <element name="CanonicalizationMethod" type="ds:CanonicalizationMethodType"/>
+  <complexType name="CanonicalizationMethodType" mixed="true">
+    <sequence>
+      <any namespace="##any" minOccurs="0" maxOccurs="unbounded"/>
+      <!--(0,unbounded) elements from (1,1) namespace-->
+    </sequence>
+    <attribute name="Algorithm" type="anyURI" use="required"/>
+  </complexType>
+  <element name="SignatureMethod" type="ds:SignatureMethodType"/>
+  <complexType name="SignatureMethodType" mixed="true">
+    <sequence>
+      <element name="HMACOutputLength" type="ds:HMACOutputLengthType" minOccurs="0"/>
+      <any namespace="##other" minOccurs="0" maxOccurs="unbounded"/>
+      <!--(0,unbounded) elements from (1,1) external namespace-->
+    </sequence>
+    <attribute name="Algorithm" type="anyURI" use="required"/>
+  </complexType>
+  <!--Start Reference-->
+  <element name="Reference" type="ds:ReferenceType"/>
+  <complexType name="ReferenceType">
+    <sequence>
+      <element ref="ds:Transforms" minOccurs="0"/>
+      <element ref="ds:DigestMethod"/>
+      <element ref="ds:DigestValue"/>
+    </sequence>
+    <attribute name="Id" type="ID" use="optional"/>
+    <attribute name="URI" type="anyURI" use="optional"/>
+    <attribute name="Type" type="anyURI" use="optional"/>
+  </complexType>
+  <element name="Transforms" type="ds:TransformsType"/>
+  <complexType name="TransformsType">
+    <sequence>
+      <element ref="ds:Transform" maxOccurs="unbounded"/>
+    </sequence>
+  </complexType>
+  <element name="Transform" type="ds:TransformType"/>
+  <complexType name="TransformType" mixed="true">
+    <choice minOccurs="0" maxOccurs="unbounded">
+      <any namespace="##other" processContents="lax"/>
+      <!--(1,1) elements from (0,unbounded) namespaces-->
+      <element name="XPath" type="string"/>
+    </choice>
+    <attribute name="Algorithm" type="anyURI" use="required"/>
+  </complexType>
+  <!--End Reference-->
+  <element name="DigestMethod" type="ds:DigestMethodType"/>
+  <complexType name="DigestMethodType" mixed="true">
+    <sequence>
+      <any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+    </sequence>
+    <attribute name="Algorithm" type="anyURI" use="required"/>
+  </complexType>
+  <element name="DigestValue" type="ds:DigestValueType"/>
+  <simpleType name="DigestValueType">
+    <restriction base="base64Binary"/>
+  </simpleType>
+  <!--End SignedInfo-->
+  <!--Start KeyInfo-->
+  <element name="KeyInfo" type="ds:KeyInfoType"/>
+  <complexType name="KeyInfoType" mixed="true">
+    <choice maxOccurs="unbounded">
+      <element ref="ds:KeyName"/>
+      <element ref="ds:KeyValue"/>
+      <element ref="ds:RetrievalMethod"/>
+      <element ref="ds:X509Data"/>
+      <element ref="ds:PGPData"/>
+      <element ref="ds:SPKIData"/>
+      <element ref="ds:MgmtData"/>
+      <any namespace="##other" processContents="lax"/>
+      <!--(1,1) elements from (0,unbounded) namespaces-->
+    </choice>
+    <attribute name="Id" type="ID" use="optional"/>
+  </complexType>
+  <element name="KeyName" type="string"/>
+  <element name="MgmtData" type="string"/>
+  <element name="KeyValue" type="ds:KeyValueType"/>
+  <complexType name="KeyValueType" mixed="true">
+    <choice>
+      <element ref="ds:DSAKeyValue"/>
+      <element ref="ds:RSAKeyValue"/>
+      <any namespace="##other" processContents="lax"/>
+    </choice>
+  </complexType>
+  <element name="RetrievalMethod" type="ds:RetrievalMethodType"/>
+  <complexType name="RetrievalMethodType">
+    <sequence>
+      <element ref="ds:Transforms" minOccurs="0"/>
+    </sequence>
+    <attribute name="URI" type="anyURI"/>
+    <attribute name="Type" type="anyURI" use="optional"/>
+  </complexType>
+  <!--Start X509Data-->
+  <element name="X509Data" type="ds:X509DataType"/>
+  <complexType name="X509DataType">
+    <sequence maxOccurs="unbounded">
+      <choice>
+        <element name="X509IssuerSerial" type="ds:X509IssuerSerialType"/>
+        <element name="X509SKI" type="base64Binary"/>
+        <element name="X509SubjectName" type="string"/>
+        <element name="X509Certificate" type="base64Binary"/>
+        <element name="X509CRL" type="base64Binary"/>
+        <any namespace="##other" processContents="lax"/>
+      </choice>
+    </sequence>
+  </complexType>
+  <complexType name="X509IssuerSerialType">
+    <sequence>
+      <element name="X509IssuerName" type="string"/>
+      <element name="X509SerialNumber" type="integer"/>
+    </sequence>
+  </complexType>
+  <!--End X509Data-->
+  <!--Begin PGPData-->
+  <element name="PGPData" type="ds:PGPDataType"/>
+  <complexType name="PGPDataType">
+    <choice>
+      <sequence>
+        <element name="PGPKeyID" type="base64Binary"/>
+        <element name="PGPKeyPacket" type="base64Binary" minOccurs="0"/>
+        <any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+      </sequence>
+      <sequence>
+        <element name="PGPKeyPacket" type="base64Binary"/>
+        <any namespace="##other" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+      </sequence>
+    </choice>
+  </complexType>
+  <!--End PGPData-->
+  <!--Begin SPKIData-->
+  <element name="SPKIData" type="ds:SPKIDataType"/>
+  <complexType name="SPKIDataType">
+    <sequence maxOccurs="unbounded">
+      <element name="SPKISexp" type="base64Binary"/>
+      <any namespace="##other" processContents="lax" minOccurs="0"/>
+    </sequence>
+  </complexType>
+  <!--End SPKIData-->
+  <!--End KeyInfo-->
+  <!--Start Object (Manifest, SignatureProperty)-->
+  <element name="Object" type="ds:ObjectType"/>
+  <complexType name="ObjectType" mixed="true">
+    <sequence minOccurs="0" maxOccurs="unbounded">
+      <any namespace="##any" processContents="lax"/>
+    </sequence>
+    <attribute name="Id" type="ID" use="optional"/>
+    <attribute name="MimeType" type="string" use="optional"/>
+    <attribute name="Encoding" type="anyURI" use="optional"/>
+    <!--add a grep facet-->
+  </complexType>
+  <element name="Manifest" type="ds:ManifestType"/>
+  <complexType name="ManifestType">
+    <sequence>
+      <element ref="ds:Reference" maxOccurs="unbounded"/>
+    </sequence>
+    <attribute name="Id" type="ID" use="optional"/>
+  </complexType>
+  <element name="SignatureProperties" type="ds:SignaturePropertiesType"/>
+  <complexType name="SignaturePropertiesType">
+    <sequence>
+      <element ref="ds:SignatureProperty" maxOccurs="unbounded"/>
+    </sequence>
+    <attribute name="Id" type="ID" use="optional"/>
+  </complexType>
+  <element name="SignatureProperty" type="ds:SignaturePropertyType"/>
+  <complexType name="SignaturePropertyType" mixed="true">
+    <choice maxOccurs="unbounded">
+      <any namespace="##other" processContents="lax"/>
+      <!--(1,1) elements from (1,unbounded) namespaces-->
+    </choice>
+    <attribute name="Target" type="anyURI" use="required"/>
+    <attribute name="Id" type="ID" use="optional"/>
+  </complexType>
+  <!--End Object (Manifest, SignatureProperty)-->
+  <!--Start Algorithm Parameters-->
+  <simpleType name="HMACOutputLengthType">
+    <restriction base="integer"/>
+  </simpleType>
+  <!--Start KeyValue Element-types-->
+  <element name="DSAKeyValue" type="ds:DSAKeyValueType"/>
+  <complexType name="DSAKeyValueType">
+    <sequence>
+      <sequence minOccurs="0">
+        <element name="P" type="ds:CryptoBinary"/>
+        <element name="Q" type="ds:CryptoBinary"/>
+      </sequence>
+      <element name="G" type="ds:CryptoBinary" minOccurs="0"/>
+      <element name="Y" type="ds:CryptoBinary"/>
+      <element name="J" type="ds:CryptoBinary" minOccurs="0"/>
+      <sequence minOccurs="0">
+        <element name="Seed" type="ds:CryptoBinary"/>
+        <element name="PgenCounter" type="ds:CryptoBinary"/>
+      </sequence>
+    </sequence>
+  </complexType>
+  <element name="RSAKeyValue" type="ds:RSAKeyValueType"/>
+  <complexType name="RSAKeyValueType">
+    <sequence>
+      <element name="Modulus" type="ds:CryptoBinary"/>
+      <element name="Exponent" type="ds:CryptoBinary"/>
+    </sequence>
+  </complexType>
+  <!--End KeyValue Element-types-->
+  <!--End Signature-->
+</schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\YAJALA\Downloads\incomesregister_api_technicalspecification_v1.07\IncomesRegister_API_TechnicalSpecification_v1.07\WSDL\WageReportsFromIR.xsd</con:url><con:content>&lt;xs:schema targetNamespace="http://www.tulorekisteri.fi/2017/1/WageReportsFromIR" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wrfir="http://www.tulorekisteri.fi/2017/1/WageReportsFromIR" xmlns:wrfirt="http://www.tulorekisteri.fi/2017/1/WageReportsFromIRTypes" xmlns:irct="http://www.tulorekisteri.fi/2017/1/IRCommonTypes">
+  &lt;xs:import namespace="http://www.tulorekisteri.fi/2017/1/WageReportsFromIRTypes" schemaLocation="WageReportsFromIRTypes.xsd"/>
+  &lt;xs:element name="WageReportsFromIR" type="wrfirt:WageReportsFromIR"/>
+&lt;/xs:schema></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\YAJALA\Downloads\incomesregister_api_technicalspecification_v1.07\IncomesRegister_API_TechnicalSpecification_v1.07\WSDL\WageReportsFromIRTypes.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.tulorekisteri.fi/2017/1/WageReportsFromIRTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wrfirt="http://www.tulorekisteri.fi/2017/1/WageReportsFromIRTypes" xmlns:smt="http://www.tulorekisteri.fi/2017/1/StatusMessageTypes" xmlns:irct="http://www.tulorekisteri.fi/2017/1/IRCommonTypes" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+  <xs:import namespace="http://www.tulorekisteri.fi/2017/1/IRCommonTypes" schemaLocation="IRCommonTypes.xsd"/>
+  <xs:import namespace="http://www.tulorekisteri.fi/2017/1/StatusMessageTypes" schemaLocation="StatusMessageTypes.xsd"/>
+  <xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="xmldsig-core-schema.xsd"/>
+  <xs:simpleType name="AllowanceCode">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:simpleType name="BenefitCode">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:simpleType name="ExceptionCode">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:simpleType name="FormCode">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:simpleType name="IncomeEarnerType">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:simpleType name="PaymentType">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:simpleType name="RemunerationCode">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:simpleType name="WorkMunicipality">
+    <xs:restriction base="irct:String200">
+      <xs:minLength value="1"/>
+      <xs:maxLength value="200"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="Absence">
+    <xs:sequence>
+      <xs:element name="AbsenceRepStartDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="AbsenceRepEndDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="UnpaidAbsence" type="wrfirt:UnpaidAbsence" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PaidAbsence" type="wrfirt:PaidAbsence" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="AccidentInsurance">
+    <xs:sequence>
+      <xs:element name="AccInsProvId" type="wrfirt:Id" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="AccInsPolicyNo" type="irct:String20" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Address">
+    <xs:sequence>
+      <xs:element name="Co" type="irct:String70" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Street" type="irct:String100" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="POBox" type="irct:String10" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PostalCode" type="irct:String20" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PostOffice" type="irct:String200" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CountryCode" type="irct:String2" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CountryName" type="irct:String70" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Addresses">
+    <xs:sequence>
+      <xs:element name="TypedAddress" type="wrfirt:TypedAddress" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CarBenefit">
+    <xs:sequence>
+      <xs:element name="CarBenefitCode" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="AgeGroupCode" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Kilometers" type="xs:int" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ContactPerson">
+    <xs:sequence>
+      <xs:element name="Name" type="irct:String200" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Telephone" type="irct:String40" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Email" type="irct:String70" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ResponsibilityCode" type="xs:int" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ContactPersons">
+    <xs:sequence>
+      <xs:element name="ContactPerson" type="wrfirt:ContactPerson" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DailyAllowance">
+    <xs:sequence>
+      <xs:element name="AllowanceCode" type="wrfirt:AllowanceCode" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeliveryData">
+    <xs:sequence>
+      <xs:element name="Timestamp" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Source" type="irct:String30" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="DeliveryId" type="irct:String40" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="IRDeliveryId" type="irct:Guid" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DeliveryToIRChannelCode" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PaymentPeriod" type="wrfirt:PaymentPeriod" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ContactPersons" type="wrfirt:ContactPersons" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Payer" type="wrfirt:Payer" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EarningPeriod">
+    <xs:sequence>
+      <xs:element name="StartDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="EndDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EarningPeriods">
+    <xs:sequence>
+      <xs:element name="EarningPeriod" type="wrfirt:EarningPeriod" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EmployeeMax183d">
+    <xs:sequence>
+      <xs:element name="CountryCode" type="irct:String2" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Employment">
+    <xs:sequence>
+      <xs:element name="Employed" type="irct:trueOrFalse" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="EmploymentCode" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="TermCode" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PartTime" type="irct:decimal2" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="HoursPerWeek" type="irct:decimal2" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PaymentTypes" type="wrfirt:PaymentTypes" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="EmploymentPeriods" type="wrfirt:EmploymentPeriods" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="EmploymentEndings" type="wrfirt:EmploymentEndings" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EmploymentEnding">
+    <xs:sequence>
+      <xs:element name="Type" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Code" type="irct:String20" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EmploymentEndings">
+    <xs:sequence>
+      <xs:element name="EmploymentEnding" type="wrfirt:EmploymentEnding" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EmploymentPeriods">
+    <xs:sequence>
+      <xs:element name="Period" type="wrfirt:Period" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EmploymentReg">
+    <xs:sequence>
+      <xs:element name="Type" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Code" type="irct:String20" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="EmploymentRegs">
+    <xs:sequence>
+      <xs:element name="EmploymentReg" type="wrfirt:EmploymentReg" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FinServiceRecipient">
+    <xs:sequence>
+      <xs:element name="FinServiceRecipientIds" type="wrfirt:FinServiceRecipientIds" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="FinServiceRecipientIds">
+    <xs:sequence>
+      <xs:element name="Id" type="wrfirt:Id" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ForeignLeasedWork">
+    <xs:sequence>
+      <xs:element name="Representative" type="wrfirt:Representative" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="EstAmount" type="irct:decimal2" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="FinServiceRecipient" type="wrfirt:FinServiceRecipient" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Id">
+    <xs:sequence>
+      <xs:element name="Type" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Code" type="irct:String30" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CountryCode" type="irct:String2" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CountryName" type="irct:String70" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IncomeEarner">
+    <xs:sequence>
+      <xs:element name="IncomeEarnerIds" type="wrfirt:IncomeEarnerIds" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="IncomeEarnerBasic" type="wrfirt:IncomeEarnerBasic" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Addresses" type="wrfirt:Addresses" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="SubOrgs" type="wrfirt:SubOrgs" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Employment" type="wrfirt:Employment" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Professions" type="wrfirt:Professions" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="EmploymentRegs" type="wrfirt:EmploymentRegs" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PlaceOfBusiness" type="wrfirt:PlaceOfBusiness" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PensionInsurance" type="wrfirt:PensionInsurance" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="AccidentInsurance" type="wrfirt:AccidentInsurance" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="InsuranceExceptions" type="wrfirt:InsuranceExceptions" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="InternationalData" type="wrfirt:InternationalData" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="IncomeEarnerOther" type="wrfirt:IncomeEarnerOther" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IncomeEarnerBasic">
+    <xs:sequence>
+      <xs:element name="MissingId" type="irct:true" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CompanyName" type="irct:String200" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="LastName" type="irct:String200" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="FirstName" type="irct:String100" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="BirthDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Gender" type="xs:int" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IncomeEarnerIds">
+    <xs:sequence>
+      <xs:element name="Id" type="wrfirt:Id" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IncomeEarnerOther">
+    <xs:sequence>
+      <xs:element name="SensitiveInfoIncluded" type="irct:true" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CBACode" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="IncomeEarnerTypes" type="wrfirt:IncomeEarnerTypes" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Payments" type="wrfirt:Payments" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="IncomeEarnerTypes">
+    <xs:sequence>
+      <xs:element name="IncomeEarnerType" type="wrfirt:IncomeEarnerType" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InsuranceData">
+    <xs:sequence>
+      <xs:element name="TransactionInclusion" type="wrfirt:TransactionInclusion" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InsuranceExceptions">
+    <xs:sequence>
+      <xs:element name="ExceptionCode" type="wrfirt:ExceptionCode" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InternationalData">
+    <xs:sequence>
+      <xs:element name="PostedCertCode" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="NonResident" type="irct:true" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="NonResidentCountryCode" type="irct:String2" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="NonResidentCountryName" type="irct:String70" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="SubToWithhold" type="irct:true" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="TaxTreatyCountryCode" type="irct:String2" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="WorkForm" type="wrfirt:WorkForm" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="KmAllowance">
+    <xs:sequence>
+      <xs:element name="Kilometers" type="xs:int" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MealBenefit">
+    <xs:sequence>
+      <xs:element name="TaxValue" type="irct:true" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="NT1Address">
+    <xs:sequence>
+      <xs:element name="Co" type="irct:String70" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CountryCode" type="irct:String2" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CountryName" type="irct:String70" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="POBox" type="irct:String10" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PostalCode" type="irct:String20" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PostOffice" type="irct:String200" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Street" type="irct:String100" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OrigPaymentPeriod">
+    <xs:sequence>
+      <xs:element name="PaymentDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="StartDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="EndDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OrigPaymentPeriods">
+    <xs:sequence>
+      <xs:element name="OrigPaymentPeriod" type="wrfirt:OrigPaymentPeriod" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="OtherBenefit">
+    <xs:sequence>
+      <xs:element name="BenefitCode" type="wrfirt:BenefitCode" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PaidAbsence">
+    <xs:sequence>
+      <xs:element name="PaidAbsencePeriods" type="wrfirt:PaidAbsencePeriods" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PaidAbsencePeriod">
+    <xs:sequence>
+      <xs:element name="StartDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="EndDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="AbsenceDays" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="AbsenceUntil" type="xs:date" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CauseCode" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Amount" type="irct:decimal2" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ReimbApp" type="wrfirt:ReimbApp" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PaidAbsencePeriods">
+    <xs:sequence>
+      <xs:element name="PaidAbsencePeriod" type="wrfirt:PaidAbsencePeriod" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Payer">
+    <xs:sequence>
+      <xs:element name="PayerIds" type="wrfirt:PayerIds" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PayerBasic" type="wrfirt:PayerBasic" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Address" type="wrfirt:Address" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="SubOrgs" type="wrfirt:SubOrgs" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PayerOther" type="wrfirt:PayerOther" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="SubstitutePayer" type="wrfirt:SubstitutePayer" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PayerBasic">
+    <xs:sequence>
+      <xs:element name="MissingId" type="irct:true" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CompanyName" type="irct:String200" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="LastName" type="irct:String200" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="FirstName" type="irct:String100" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="BirthDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Language" type="xs:int" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PayerIds">
+    <xs:sequence>
+      <xs:element name="Id" type="wrfirt:Id" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PayerOther">
+    <xs:sequence>
+      <xs:element name="SensitiveInfoIncluded" type="irct:true" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PayerTypes" type="wrfirt:PayerTypes" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PayerTypes">
+    <xs:sequence>
+      <xs:element name="Code" type="xs:int" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Payment">
+    <xs:sequence>
+      <xs:element name="PaymentType" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PaymentRef" type="irct:String50" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PaymentSpecifier" type="irct:String200" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PaymentPeriod">
+    <xs:sequence>
+      <xs:element name="PaymentDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="StartDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="EndDate" type="xs:date" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Payments">
+    <xs:sequence>
+      <xs:element name="Payment" type="wrfirt:Payment" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PaymentTypes">
+    <xs:sequence>
+      <xs:element name="PaymentType" type="wrfirt:PaymentType" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PensionInsurance">
+    <xs:sequence>
+      <xs:element name="PensionActCode" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PensionProvIdCode" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PensionPolicyNo" type="irct:PensionPolicyNo" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Period">
+    <xs:sequence>
+      <xs:element name="StartDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="EndDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="PlaceOfBusiness">
+    <xs:sequence>
+      <xs:element name="Code" type="irct:String20" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Street" type="irct:String100" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PostalCode" type="irct:String20" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PostOffice" type="irct:String200" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CountryCode" type="irct:String2" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CountryName" type="irct:String70" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Profession">
+    <xs:sequence>
+      <xs:element name="Type" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Code" type="irct:String20" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Title" type="irct:String200" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Professions">
+    <xs:sequence>
+      <xs:element name="Profession" type="wrfirt:Profession" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Query">
+    <xs:sequence>
+      <xs:element name="IRQueryId" type="irct:Guid" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="QueryTimestamp" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="QueryTimespanStart" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="QueryTimespanEnd" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RecoveryData">
+    <xs:sequence>
+      <xs:element name="RecoveryDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Withhold" type="irct:decimal2" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="OrigPaymentPeriods" type="wrfirt:OrigPaymentPeriods" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ReimbApp">
+    <xs:sequence>
+      <xs:element name="ReimbPayment" type="wrfirt:ReimbPayment" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ReimbPayment">
+    <xs:sequence>
+      <xs:element name="PaymentType" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PaymentRef" type="irct:String50" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PaymentSpecifier" type="irct:String200" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Remunerations">
+    <xs:sequence>
+      <xs:element name="RemunerationCode" type="wrfirt:RemunerationCode" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Report">
+    <xs:sequence>
+      <xs:element name="DeliveryData" type="wrfirt:DeliveryData" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ReportData" type="wrfirt:ReportData" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="IncomeEarner" type="wrfirt:IncomeEarner" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Transactions" type="wrfirt:Transactions" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ForeignLeasedWork" type="wrfirt:ForeignLeasedWork" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="StayPeriodsInFinland" type="wrfirt:StayPeriodsInFinland" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="WorkPeriodsInFinland" type="wrfirt:WorkPeriodsInFinland" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="WorkCountries" type="wrfirt:WorkCountries" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Absence" type="wrfirt:Absence" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ReportData">
+    <xs:sequence>
+      <xs:element name="IRReportId" type="irct:Guid" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ReportId" type="irct:String40" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ReportStatus" type="xs:int" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ReportVersion" type="xs:int" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ReceivedTimestamp" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="CreatedTimestamp" type="xs:dateTime" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Reports">
+    <xs:sequence>
+      <xs:element name="Report" type="wrfirt:Report" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Representative">
+    <xs:sequence>
+      <xs:element name="SensitiveInfoIncluded" type="irct:true" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="RepresentativeIds" type="wrfirt:RepresentativeIds" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Name" type="irct:String200" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Address" type="wrfirt:Address" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="RepresentativeReports" type="irct:true" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="RepresentativeIds">
+    <xs:sequence>
+      <xs:element name="Id" type="wrfirt:Id" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SailorIncome">
+    <xs:sequence>
+      <xs:element name="SailorIncome" type="irct:true" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CrossTradeTime" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="WithdrawalPeriod" type="wrfirt:WithdrawalPeriod" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ServiceRecipient">
+    <xs:sequence>
+      <xs:element name="SensitiveInfoIncluded" type="irct:true" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ServiceRecipientIds" type="wrfirt:ServiceRecipientIds" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Name" type="irct:String200" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ServiceRecipientAddress" type="wrfirt:ServiceRecipientAddress" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ServiceRecipientAddress">
+    <xs:sequence>
+      <xs:element name="Co" type="irct:String70" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Street" type="irct:String100" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="POBox" type="irct:String10" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PostalCode" type="irct:String20" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PostOffice" type="irct:String200" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CountryCode" type="irct:String2" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CountryName" type="irct:String70" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ServiceRecipientIds">
+    <xs:sequence>
+      <xs:element name="Id" type="wrfirt:Id" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SixMonthRule">
+    <xs:sequence>
+      <xs:element name="Applicable" type="irct:trueOrFalse" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CountryCode" type="irct:String2" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CountryName" type="irct:String70" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StayPeriod">
+    <xs:sequence>
+      <xs:element name="StartDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="EndDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StayPeriodsAbroad">
+    <xs:sequence>
+      <xs:element name="Period" type="wrfirt:StayPeriod" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StayPeriodsInFinland">
+    <xs:sequence>
+      <xs:element name="NoStayPeriods" type="irct:true" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Period" type="wrfirt:StayPeriod" minOccurs="0" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SubOrg">
+    <xs:sequence>
+      <xs:element name="Type" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Code" type="irct:String20" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SubOrgs">
+    <xs:sequence>
+      <xs:element name="SubOrg" type="wrfirt:SubOrg" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Subscription">
+    <xs:sequence>
+      <xs:element name="QueryDataType" type="xs:int" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="QueryProfile" type="irct:String40" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ProductionEnvironment" type="irct:trueOrFalse" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="IRMainSubscriptionId" type="irct:Guid" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="IRSubscriptionId" type="irct:Guid" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="MainSubscriptionId" type="irct:String40" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="SubscriptionId" type="irct:String40" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="SubstitutePayer">
+    <xs:sequence>
+      <xs:element name="Acts" type="irct:true" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="EmployerId" type="wrfirt:Id" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="EmployerName" type="irct:String200" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="WageSec" type="irct:true" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Summary">
+    <xs:sequence>
+      <xs:element name="NrOfReports" type="xs:int" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Transaction">
+    <xs:sequence>
+      <xs:element name="TransactionBasic" type="wrfirt:TransactionBasic" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="InsuranceData" type="wrfirt:InsuranceData" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="EarningPeriods" type="wrfirt:EarningPeriods" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="UnitWages" type="wrfirt:UnitWages" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CarBenefit" type="wrfirt:CarBenefit" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="MealBenefit" type="wrfirt:MealBenefit" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="OtherBenefit" type="wrfirt:OtherBenefit" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="SailorIncome" type="wrfirt:SailorIncome" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="RecoveryData" type="wrfirt:RecoveryData" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="DailyAllowance" type="wrfirt:DailyAllowance" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="KmAllowance" type="wrfirt:KmAllowance" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="SixMonthRule" type="wrfirt:SixMonthRule" minOccurs="0" maxOccurs="1"/>
+      <!--<xs:element name="EmployeeMax183d" type="wrfirt:EmployeeMax183d" minOccurs="0" maxOccurs="1"/>-->
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TransactionBasic">
+    <xs:sequence>
+      <xs:element name="TransactionCode" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Amount" type="irct:decimal2" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="NoMoney" type="irct:true" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="OneOff" type="irct:true" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="UnjustEnrichment" type="irct:true" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Recovery" type="irct:true" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TransactionInclusion">
+    <xs:sequence>
+      <xs:element name="InsuranceCode" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Included" type="irct:trueOrFalse" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Transactions">
+    <xs:sequence>
+      <xs:element name="Transaction" type="wrfirt:Transaction" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="TypedAddress">
+    <xs:sequence>
+      <xs:element name="AddressType" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Co" type="irct:String70" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Street" type="irct:String100" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="POBox" type="irct:String10" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PostalCode" type="irct:String20" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PostOffice" type="irct:String200" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CountryCode" type="irct:String2" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CountryName" type="irct:String70" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UnitWage">
+    <xs:sequence>
+      <xs:element name="UnitPrice" type="irct:decimal2" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="UnitAmount" type="irct:decimal2" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="UnitCode" type="xs:int" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UnitWages">
+    <xs:sequence>
+      <xs:element name="UnitWage" type="wrfirt:UnitWage" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UnpaidAbsence">
+    <xs:sequence>
+      <xs:element name="UnpaidAbsencePeriods" type="wrfirt:UnpaidAbsencePeriods" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UnpaidAbsencePeriod">
+    <xs:sequence>
+      <xs:element name="StartDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="EndDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="AbsenceDays" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CauseCode" type="xs:int" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="UnpaidAbsencePeriods">
+    <xs:sequence>
+      <xs:element name="UnpaidAbsencePeriod" type="wrfirt:UnpaidAbsencePeriod" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WageReportsFromIR">
+    <xs:sequence>
+      <xs:element name="Subscription" type="wrfirt:Subscription" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Query" type="wrfirt:Query" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Summary" type="wrfirt:Summary" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="MessageErrors" type="smt:MessageErrors" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="DeliveryErrors" type="smt:DeliveryErrors" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Reports" type="wrfirt:Reports" minOccurs="0" maxOccurs="1"/>
+      <xs:element ref="ds:Signature" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WithdrawalPeriod">
+    <xs:sequence>
+      <xs:element name="StartDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="EndDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WorkCountries">
+    <xs:sequence>
+      <xs:element name="WorkCountry" type="wrfirt:WorkCountry" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WorkCountry">
+    <xs:sequence>
+      <xs:element name="WorkCountryCode" type="irct:String2" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="WorkCountryName" type="irct:String70" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="WorkMunicipalities" type="wrfirt:WorkMunicipalities" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="WorkCountryAddress" type="wrfirt:WorkCountryAddress" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ServiceRecipient" type="wrfirt:ServiceRecipient" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="StayPeriodsAbroad" type="wrfirt:StayPeriodsAbroad" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="WorkPeriodsAbroad" type="wrfirt:WorkPeriodsAbroad" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="TaxingRight" type="irct:trueOrFalse" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="BurdensResultOfPE" type="irct:trueOrFalse" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="WagePerMonth" type="irct:decimal2" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Remunerations" type="wrfirt:Remunerations" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WorkCountryAddress">
+    <xs:sequence>
+      <xs:element name="Co" type="irct:String70" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="Street" type="irct:String100" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="POBox" type="irct:String10" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PostalCode" type="irct:String20" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="PostOffice" type="irct:String200" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CountryCode" type="irct:String2" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CountryName" type="irct:String70" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WorkForm">
+    <xs:sequence>
+      <xs:element name="FormCode" type="wrfirt:FormCode" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WorkMunicipalities">
+    <xs:sequence>
+      <xs:element name="WorkMunicipality" type="wrfirt:WorkMunicipality" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WorkPeriodInFinland">
+    <xs:sequence>
+      <xs:element name="StartDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="EndDate" type="xs:date" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="WorkDays" type="xs:int" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WorkPeriodsAbroad">
+    <xs:sequence>
+      <xs:element name="Period" type="wrfirt:Period" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="WorkPeriodsInFinland">
+    <xs:sequence>
+      <xs:element name="WorkPeriodInFinland" type="wrfirt:WorkPeriodInFinland" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part><con:part><con:url>file:\C:\Users\YAJALA\Downloads\incomesregister_api_technicalspecification_v1.07\IncomesRegister_API_TechnicalSpecification_v1.07\WSDL\StatusMessageTypes.xsd</con:url><con:content><![CDATA[<xs:schema targetNamespace="http://www.tulorekisteri.fi/2017/1/StatusMessageTypes" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:smt="http://www.tulorekisteri.fi/2017/1/StatusMessageTypes" xmlns:irct="http://www.tulorekisteri.fi/2017/1/IRCommonTypes" xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+  <xs:import namespace="http://www.tulorekisteri.fi/2017/1/IRCommonTypes" schemaLocation="IRCommonTypes.xsd"/>
+  <xs:import namespace="http://www.w3.org/2000/09/xmldsig#" schemaLocation="xmldsig-core-schema.xsd"/>
+  <xs:complexType name="AckData">
+    <xs:complexContent>
+      <xs:extension base="smt:Message">
+        <xs:sequence>
+          <xs:element name="DeliveryDataStatus" type="xs:int" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="IRDeliveryId" type="irct:Guid" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="MessageErrors" type="smt:MessageErrors" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="DeliveryErrors" type="smt:DeliveryErrors" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AckFromIR">
+    <xs:sequence>
+      <xs:element name="DeliveryData" type="smt:DeliveryData" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="AckData" type="smt:AckData" minOccurs="1" maxOccurs="1"/>
+      <xs:element ref="ds:Signature" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeliveryData">
+    <xs:sequence>
+      <xs:element name="Timestamp" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Source" type="irct:String30" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="DeliveryDataType" type="xs:int" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DeliveryId" type="irct:String40" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="FaultyControl" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ProductionEnvironment" type="irct:trueOrFalse" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DeliveryDataOwner" type="smt:Id" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DeliveryDataCreator" type="smt:Id" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DeliveryDataSender" type="smt:Id" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="DeliveryErrors">
+    <xs:sequence>
+      <xs:element name="ErrorInfo" type="smt:ErrorInfo" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ErrorInfo">
+    <xs:sequence>
+      <xs:element name="ErrorCode" type="irct:String20" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ErrorMessage" type="irct:String500" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="ErrorDetails" type="irct:String500" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Id">
+    <xs:sequence>
+      <xs:element name="Type" type="xs:int" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="Code" type="irct:String30" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="CountryCode" type="irct:String2" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="CountryName" type="irct:String70" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InvalidItems">
+    <xs:sequence>
+      <xs:element name="Item" type="smt:Item" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Item">
+    <xs:sequence>
+      <xs:element name="ItemId" type="irct:String40" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="IRItemId" type="irct:Guid" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ItemVersion" type="xs:int" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ItemErrors" type="smt:ItemErrors" minOccurs="0" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ItemErrors">
+    <xs:sequence>
+      <xs:element name="ErrorInfo" type="smt:ErrorInfo" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Message">
+    <xs:sequence>
+      <xs:element name="IRResponseId" type="irct:Guid" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="IRResponseTimestamp" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="MessageErrors">
+    <xs:sequence>
+      <xs:element name="ErrorInfo" type="smt:ErrorInfo" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StatusRequestToIR">
+    <xs:sequence>
+      <xs:element name="Timestamp" type="xs:dateTime" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DeliveryDataType" type="xs:int" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DeliveryId" type="irct:String40" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="IRDeliveryId" type="irct:Guid" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="ProductionEnvironment" type="irct:trueOrFalse" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DeliveryDataOwner" type="smt:Id" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DeliveryDataCreator" type="smt:Id" minOccurs="1" maxOccurs="1"/>
+      <xs:element name="DeliveryDataSender" type="smt:Id" minOccurs="1" maxOccurs="1"/>
+      <xs:element ref="ds:Signature" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="StatusResponse">
+    <xs:complexContent>
+      <xs:extension base="smt:Message">
+        <xs:sequence>
+          <xs:element name="DeliveryDataStatus" type="xs:int" minOccurs="1" maxOccurs="1"/>
+          <xs:element name="IRDeliveryId" type="irct:Guid" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="ValidItems" type="smt:ValidItems" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="InvalidItems" type="smt:InvalidItems" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="MessageErrors" type="smt:MessageErrors" minOccurs="0" maxOccurs="1"/>
+          <xs:element name="DeliveryErrors" type="smt:DeliveryErrors" minOccurs="0" maxOccurs="1"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="StatusResponseFromIR">
+    <xs:sequence>
+      <xs:element name="DeliveryData" type="smt:DeliveryData" minOccurs="0" maxOccurs="1"/>
+      <xs:element name="StatusResponse" type="smt:StatusResponse" minOccurs="1" maxOccurs="1"/>
+      <xs:element ref="ds:Signature" minOccurs="1" maxOccurs="1"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ValidItems">
+    <xs:sequence>
+      <xs:element name="Item" type="smt:Item" minOccurs="1" maxOccurs="unbounded"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://localhost/20170526/WageReportQueryService.svc</con:endpoint></con:endpoints><con:operation id="78045e1c-85d5-4953-a7c3-4482d28ad56e" isOneWay="false" action="GetWageReportsOneIncomeEarner" name="GetWageReportsOneIncomeEarner" bindingOperationName="GetWageReportsOneIncomeEarner" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c0da0cf6-c19c-4dbe-87c4-79006f31a8d8" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://YAPLT076:8080/</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dat="http://www.tulorekisteri.fi/2017/1/DataRequestToIR" xmlns:xd="http://www.w3.org/2000/09/xmldsig#">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <dat:WageReportsOneIncomeEarnerRequestToIR>\r
+         <Timestamp>?</Timestamp>\r
+         <QueryDataType>?</QueryDataType>\r
+         <!--Optional:-->\r
+         <QueryProfile>?</QueryProfile>\r
+         <!--Optional:-->\r
+         <IncludeAllVersions>?</IncludeAllVersions>\r
+         <ProductionEnvironment>?</ProductionEnvironment>\r
+         <DeliveryDataOwner>\r
+            <Type>?</Type>\r
+            <Code>?</Code>\r
+            <!--Optional:-->\r
+            <CountryCode>?</CountryCode>\r
+            <!--Optional:-->\r
+            <CountryName>?</CountryName>\r
+         </DeliveryDataOwner>\r
+         <DeliveryDataCreator>\r
+            <Type>?</Type>\r
+            <Code>?</Code>\r
+            <!--Optional:-->\r
+            <CountryCode>?</CountryCode>\r
+            <!--Optional:-->\r
+            <CountryName>?</CountryName>\r
+         </DeliveryDataCreator>\r
+         <DeliveryDataSender>\r
+            <Type>?</Type>\r
+            <Code>?</Code>\r
+            <!--Optional:-->\r
+            <CountryCode>?</CountryCode>\r
+            <!--Optional:-->\r
+            <CountryName>?</CountryName>\r
+         </DeliveryDataSender>\r
+         <!--Optional:-->\r
+         <DataRequestParameters>\r
+            <!--Zero or more repetitions:-->\r
+            <ValueParameter>\r
+               <ParameterType>?</ParameterType>\r
+               <Value>?</Value>\r
+            </ValueParameter>\r
+            <!--Zero or more repetitions:-->\r
+            <TimespanParameter>\r
+               <ParameterType>?</ParameterType>\r
+               <StartDate>?</StartDate>\r
+               <EndDate>?</EndDate>\r
+            </TimespanParameter>\r
+            <!--Zero or more repetitions:-->\r
+            <TimespanTimeParameter>\r
+               <ParameterType>?</ParameterType>\r
+               <StartDate>?</StartDate>\r
+               <EndDate>?</EndDate>\r
+            </TimespanTimeParameter>\r
+            <!--Zero or more repetitions:-->\r
+            <IdCodeParameter>\r
+               <ParameterType>?</ParameterType>\r
+               <IdType>?</IdType>\r
+               <IdCode>?</IdCode>\r
+               <!--Optional:-->\r
+               <IdCountryCode>?</IdCountryCode>\r
+            </IdCodeParameter>\r
+         </DataRequestParameters>\r
+         <xd:Signature Id="?">\r
+            <xd:SignedInfo Id="?">\r
+               <xd:CanonicalizationMethod Algorithm="?">\r
+                  e\r
+                  <!--You may enter ANY elements at this point-->\r
+                  gero\r
+               </xd:CanonicalizationMethod>\r
+               <xd:SignatureMethod Algorithm="?">\r
+                  cum\r
+                  <!--Optional:-->\r
+                  <xd:HMACOutputLength>?</xd:HMACOutputLength>\r
+                  sonoras\r
+                  <!--You may enter ANY elements at this point-->\r
+                  aeoliam\r
+               </xd:SignatureMethod>\r
+               <!--1 or more repetitions:-->\r
+               <xd:Reference Id="?" URI="?" Type="?">\r
+                  <!--Optional:-->\r
+                  <xd:Transforms>\r
+                     <!--1 or more repetitions:-->\r
+                     <xd:Transform Algorithm="?">\r
+                        quae\r
+                        <!--You have a CHOICE of the next 2 items at this level-->\r
+                        <!--You may enter ANY elements at this point-->\r
+                        <xd:XPath>?</xd:XPath>\r
+                        ventos\r
+                     </xd:Transform>\r
+                  </xd:Transforms>\r
+                  <xd:DigestMethod Algorithm="?">\r
+                     verrantque\r
+                     <!--You may enter ANY elements at this point-->\r
+                     temperat\r
+                  </xd:DigestMethod>\r
+                  <xd:DigestValue>cid:1464986446375</xd:DigestValue>\r
+               </xd:Reference>\r
+            </xd:SignedInfo>\r
+            <xd:SignatureValue Id="?">cid:158705182380</xd:SignatureValue>\r
+            <!--Optional:-->\r
+            <xd:KeyInfo Id="?">\r
+               per\r
+               <!--You have a CHOICE of the next 8 items at this level-->\r
+               <xd:KeyName>?</xd:KeyName>\r
+               <xd:KeyValue>\r
+                  turbine\r
+                  <!--You have a CHOICE of the next 3 items at this level-->\r
+                  <xd:DSAKeyValue>\r
+                     <xd:P>cid:1124649699790</xd:P>\r
+                     <xd:Q>cid:1284973131503</xd:Q>\r
+                     <!--Optional:-->\r
+                     <xd:G>cid:314245309056</xd:G>\r
+                     <xd:Y>cid:164503701750</xd:Y>\r
+                     <!--Optional:-->\r
+                     <xd:J>cid:777279033444</xd:J>\r
+                     <xd:Seed>cid:285033965526</xd:Seed>\r
+                     <xd:PgenCounter>cid:218561933977</xd:PgenCounter>\r
+                  </xd:DSAKeyValue>\r
+                  <xd:RSAKeyValue>\r
+                     <xd:Modulus>cid:1110983574826</xd:Modulus>\r
+                     <xd:Exponent>cid:367734278032</xd:Exponent>\r
+                  </xd:RSAKeyValue>\r
+                  <!--You may enter ANY elements at this point-->\r
+                  circum\r
+               </xd:KeyValue>\r
+               <xd:RetrievalMethod URI="?" Type="?">\r
+                  <!--Optional:-->\r
+                  <xd:Transforms>\r
+                     <!--1 or more repetitions:-->\r
+                     <xd:Transform Algorithm="?">\r
+                        regemque\r
+                        <!--You have a CHOICE of the next 2 items at this level-->\r
+                        <!--You may enter ANY elements at this point-->\r
+                        <xd:XPath>?</xd:XPath>\r
+                        nimborum\r
+                     </xd:Transform>\r
+                  </xd:Transforms>\r
+               </xd:RetrievalMethod>\r
+               <xd:X509Data>\r
+                  <!--You have a CHOICE of the next 6 items at this level-->\r
+                  <xd:X509IssuerSerial>\r
+                     <xd:X509IssuerName>?</xd:X509IssuerName>\r
+                     <xd:X509SerialNumber>?</xd:X509SerialNumber>\r
+                  </xd:X509IssuerSerial>\r
+                  <xd:X509SKI>cid:54006643114</xd:X509SKI>\r
+                  <xd:X509SubjectName>?</xd:X509SubjectName>\r
+                  <xd:X509Certificate>cid:377862753438</xd:X509Certificate>\r
+                  <xd:X509CRL>cid:528678962878</xd:X509CRL>\r
+                  <!--You may enter ANY elements at this point-->\r
+               </xd:X509Data>\r
+               <xd:PGPData>\r
+                  <!--You have a CHOICE of the next 2 items at this level-->\r
+                  <xd:PGPKeyID>cid:1273894569132</xd:PGPKeyID>\r
+                  <!--Optional:-->\r
+                  <xd:PGPKeyPacket>cid:298256704397</xd:PGPKeyPacket>\r
+                  <!--You may enter ANY elements at this point-->\r
+                  <xd:PGPKeyPacket>cid:793650525660</xd:PGPKeyPacket>\r
+                  <!--You may enter ANY elements at this point-->\r
+               </xd:PGPData>\r
+               <xd:SPKIData>\r
+                  <xd:SPKISexp>cid:1389529381464</xd:SPKISexp>\r
+                  <!--You may enter ANY elements at this point-->\r
+               </xd:SPKIData>\r
+               <xd:MgmtData>?</xd:MgmtData>\r
+               <!--You may enter ANY elements at this point-->\r
+               fremunt\r
+            </xd:KeyInfo>\r
+            <!--Zero or more repetitions:-->\r
+            <xd:Object Id="?" MimeType="?" Encoding="?">\r
+               foedere\r
+               <!--You may enter ANY elements at this point-->\r
+               ferant\r
+            </xd:Object>\r
+         </xd:Signature>\r
+      </dat:WageReportsOneIncomeEarnerRequestToIR>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetWageReportsOneIncomeEarner"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="ede71855-d802-4a02-80b7-da214f96d8ab" isOneWay="false" action="GetWageReportsOnePayer" name="GetWageReportsOnePayer" bindingOperationName="GetWageReportsOnePayer" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e893767a-08d6-462e-bc71-ac5fc7d87441" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:8080/WageReportQueryService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dat="http://www.tulorekisteri.fi/2017/1/DataRequestToIR" xmlns:xd="http://www.w3.org/2000/09/xmldsig#">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <dat:WageReportsOnePayerRequestToIR>\r
+         <Timestamp>?</Timestamp>\r
+         <QueryDataType>?</QueryDataType>\r
+         <!--Optional:-->\r
+         <QueryProfile>?</QueryProfile>\r
+         <!--Optional:-->\r
+         <IncludeAllVersions>?</IncludeAllVersions>\r
+         <ProductionEnvironment>?</ProductionEnvironment>\r
+         <DeliveryDataOwner>\r
+            <Type>?</Type>\r
+            <Code>?</Code>\r
+            <!--Optional:-->\r
+            <CountryCode>?</CountryCode>\r
+            <!--Optional:-->\r
+            <CountryName>?</CountryName>\r
+         </DeliveryDataOwner>\r
+         <DeliveryDataCreator>\r
+            <Type>?</Type>\r
+            <Code>?</Code>\r
+            <!--Optional:-->\r
+            <CountryCode>?</CountryCode>\r
+            <!--Optional:-->\r
+            <CountryName>?</CountryName>\r
+         </DeliveryDataCreator>\r
+         <DeliveryDataSender>\r
+            <Type>?</Type>\r
+            <Code>?</Code>\r
+            <!--Optional:-->\r
+            <CountryCode>?</CountryCode>\r
+            <!--Optional:-->\r
+            <CountryName>?</CountryName>\r
+         </DeliveryDataSender>\r
+         <!--Optional:-->\r
+         <DataRequestParameters>\r
+            <!--Zero or more repetitions:-->\r
+            <ValueParameter>\r
+               <ParameterType>?</ParameterType>\r
+               <Value>?</Value>\r
+            </ValueParameter>\r
+            <!--Zero or more repetitions:-->\r
+            <TimespanParameter>\r
+               <ParameterType>?</ParameterType>\r
+               <StartDate>?</StartDate>\r
+               <EndDate>?</EndDate>\r
+            </TimespanParameter>\r
+            <!--Zero or more repetitions:-->\r
+            <TimespanTimeParameter>\r
+               <ParameterType>?</ParameterType>\r
+               <StartDate>?</StartDate>\r
+               <EndDate>?</EndDate>\r
+            </TimespanTimeParameter>\r
+            <!--Zero or more repetitions:-->\r
+            <IdCodeParameter>\r
+               <ParameterType>?</ParameterType>\r
+               <IdType>?</IdType>\r
+               <IdCode>?</IdCode>\r
+               <!--Optional:-->\r
+               <IdCountryCode>?</IdCountryCode>\r
+            </IdCodeParameter>\r
+         </DataRequestParameters>\r
+         <xd:Signature Id="?">\r
+            <xd:SignedInfo Id="?">\r
+               <xd:CanonicalizationMethod Algorithm="?">\r
+                  e\r
+                  <!--You may enter ANY elements at this point-->\r
+                  gero\r
+               </xd:CanonicalizationMethod>\r
+               <xd:SignatureMethod Algorithm="?">\r
+                  cum\r
+                  <!--Optional:-->\r
+                  <xd:HMACOutputLength>?</xd:HMACOutputLength>\r
+                  sonoras\r
+                  <!--You may enter ANY elements at this point-->\r
+                  aeoliam\r
+               </xd:SignatureMethod>\r
+               <!--1 or more repetitions:-->\r
+               <xd:Reference Id="?" URI="?" Type="?">\r
+                  <!--Optional:-->\r
+                  <xd:Transforms>\r
+                     <!--1 or more repetitions:-->\r
+                     <xd:Transform Algorithm="?">\r
+                        quae\r
+                        <!--You have a CHOICE of the next 2 items at this level-->\r
+                        <!--You may enter ANY elements at this point-->\r
+                        <xd:XPath>?</xd:XPath>\r
+                        ventos\r
+                     </xd:Transform>\r
+                  </xd:Transforms>\r
+                  <xd:DigestMethod Algorithm="?">\r
+                     verrantque\r
+                     <!--You may enter ANY elements at this point-->\r
+                     temperat\r
+                  </xd:DigestMethod>\r
+                  <xd:DigestValue>cid:152453853154</xd:DigestValue>\r
+               </xd:Reference>\r
+            </xd:SignedInfo>\r
+            <xd:SignatureValue Id="?">cid:882397653420</xd:SignatureValue>\r
+            <!--Optional:-->\r
+            <xd:KeyInfo Id="?">\r
+               per\r
+               <!--You have a CHOICE of the next 8 items at this level-->\r
+               <xd:KeyName>?</xd:KeyName>\r
+               <xd:KeyValue>\r
+                  turbine\r
+                  <!--You have a CHOICE of the next 3 items at this level-->\r
+                  <xd:DSAKeyValue>\r
+                     <xd:P>cid:1130466199424</xd:P>\r
+                     <xd:Q>cid:28823155737</xd:Q>\r
+                     <!--Optional:-->\r
+                     <xd:G>cid:338023662817</xd:G>\r
+                     <xd:Y>cid:229178764972</xd:Y>\r
+                     <!--Optional:-->\r
+                     <xd:J>cid:931142735261</xd:J>\r
+                     <xd:Seed>cid:1509944146210</xd:Seed>\r
+                     <xd:PgenCounter>cid:1098989888385</xd:PgenCounter>\r
+                  </xd:DSAKeyValue>\r
+                  <xd:RSAKeyValue>\r
+                     <xd:Modulus>cid:392743750646</xd:Modulus>\r
+                     <xd:Exponent>cid:622031792874</xd:Exponent>\r
+                  </xd:RSAKeyValue>\r
+                  <!--You may enter ANY elements at this point-->\r
+                  circum\r
+               </xd:KeyValue>\r
+               <xd:RetrievalMethod URI="?" Type="?">\r
+                  <!--Optional:-->\r
+                  <xd:Transforms>\r
+                     <!--1 or more repetitions:-->\r
+                     <xd:Transform Algorithm="?">\r
+                        regemque\r
+                        <!--You have a CHOICE of the next 2 items at this level-->\r
+                        <!--You may enter ANY elements at this point-->\r
+                        <xd:XPath>?</xd:XPath>\r
+                        nimborum\r
+                     </xd:Transform>\r
+                  </xd:Transforms>\r
+               </xd:RetrievalMethod>\r
+               <xd:X509Data>\r
+                  <!--You have a CHOICE of the next 6 items at this level-->\r
+                  <xd:X509IssuerSerial>\r
+                     <xd:X509IssuerName>?</xd:X509IssuerName>\r
+                     <xd:X509SerialNumber>?</xd:X509SerialNumber>\r
+                  </xd:X509IssuerSerial>\r
+                  <xd:X509SKI>cid:1238015368537</xd:X509SKI>\r
+                  <xd:X509SubjectName>?</xd:X509SubjectName>\r
+                  <xd:X509Certificate>cid:772720357229</xd:X509Certificate>\r
+                  <xd:X509CRL>cid:950661557311</xd:X509CRL>\r
+                  <!--You may enter ANY elements at this point-->\r
+               </xd:X509Data>\r
+               <xd:PGPData>\r
+                  <!--You have a CHOICE of the next 2 items at this level-->\r
+                  <xd:PGPKeyID>cid:344855625033</xd:PGPKeyID>\r
+                  <!--Optional:-->\r
+                  <xd:PGPKeyPacket>cid:1002264394</xd:PGPKeyPacket>\r
+                  <!--You may enter ANY elements at this point-->\r
+                  <xd:PGPKeyPacket>cid:943298643489</xd:PGPKeyPacket>\r
+                  <!--You may enter ANY elements at this point-->\r
+               </xd:PGPData>\r
+               <xd:SPKIData>\r
+                  <xd:SPKISexp>cid:633377390627</xd:SPKISexp>\r
+                  <!--You may enter ANY elements at this point-->\r
+               </xd:SPKIData>\r
+               <xd:MgmtData>?</xd:MgmtData>\r
+               <!--You may enter ANY elements at this point-->\r
+               fremunt\r
+            </xd:KeyInfo>\r
+            <!--Zero or more repetitions:-->\r
+            <xd:Object Id="?" MimeType="?" Encoding="?">\r
+               foedere\r
+               <!--You may enter ANY elements at this point-->\r
+               ferant\r
+            </xd:Object>\r
+         </xd:Signature>\r
+      </dat:WageReportsOnePayerRequestToIR>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetWageReportsOnePayer"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="4ce65691-6f7b-46c0-9381-4a8e2ef1ce5d" isOneWay="false" action="GetWageReportsOnePolicyNo" name="GetWageReportsOnePolicyNo" bindingOperationName="GetWageReportsOnePolicyNo" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e61455b8-64d5-4a42-9907-bd2a8b0c304c" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost/20170526/WageReportQueryService.svc</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:dat="http://www.tulorekisteri.fi/2017/1/DataRequestToIR" xmlns:xd="http://www.w3.org/2000/09/xmldsig#">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <dat:WageReportsOnePolicyNoRequestToIR>\r
+         <Timestamp>?</Timestamp>\r
+         <QueryDataType>?</QueryDataType>\r
+         <!--Optional:-->\r
+         <QueryProfile>?</QueryProfile>\r
+         <!--Optional:-->\r
+         <IncludeAllVersions>?</IncludeAllVersions>\r
+         <ProductionEnvironment>?</ProductionEnvironment>\r
+         <DeliveryDataOwner>\r
+            <Type>?</Type>\r
+            <Code>?</Code>\r
+            <!--Optional:-->\r
+            <CountryCode>?</CountryCode>\r
+            <!--Optional:-->\r
+            <CountryName>?</CountryName>\r
+         </DeliveryDataOwner>\r
+         <DeliveryDataCreator>\r
+            <Type>?</Type>\r
+            <Code>?</Code>\r
+            <!--Optional:-->\r
+            <CountryCode>?</CountryCode>\r
+            <!--Optional:-->\r
+            <CountryName>?</CountryName>\r
+         </DeliveryDataCreator>\r
+         <DeliveryDataSender>\r
+            <Type>?</Type>\r
+            <Code>?</Code>\r
+            <!--Optional:-->\r
+            <CountryCode>?</CountryCode>\r
+            <!--Optional:-->\r
+            <CountryName>?</CountryName>\r
+         </DeliveryDataSender>\r
+         <!--Optional:-->\r
+         <DataRequestParameters>\r
+            <!--Zero or more repetitions:-->\r
+            <ValueParameter>\r
+               <ParameterType>?</ParameterType>\r
+               <Value>?</Value>\r
+            </ValueParameter>\r
+            <!--Zero or more repetitions:-->\r
+            <TimespanParameter>\r
+               <ParameterType>?</ParameterType>\r
+               <StartDate>?</StartDate>\r
+               <EndDate>?</EndDate>\r
+            </TimespanParameter>\r
+            <!--Zero or more repetitions:-->\r
+            <TimespanTimeParameter>\r
+               <ParameterType>?</ParameterType>\r
+               <StartDate>?</StartDate>\r
+               <EndDate>?</EndDate>\r
+            </TimespanTimeParameter>\r
+            <!--Zero or more repetitions:-->\r
+            <IdCodeParameter>\r
+               <ParameterType>?</ParameterType>\r
+               <IdType>?</IdType>\r
+               <IdCode>?</IdCode>\r
+               <!--Optional:-->\r
+               <IdCountryCode>?</IdCountryCode>\r
+            </IdCodeParameter>\r
+         </DataRequestParameters>\r
+         <xd:Signature Id="?">\r
+            <xd:SignedInfo Id="?">\r
+               <xd:CanonicalizationMethod Algorithm="?">\r
+                  e\r
+                  <!--You may enter ANY elements at this point-->\r
+                  gero\r
+               </xd:CanonicalizationMethod>\r
+               <xd:SignatureMethod Algorithm="?">\r
+                  cum\r
+                  <!--Optional:-->\r
+                  <xd:HMACOutputLength>?</xd:HMACOutputLength>\r
+                  sonoras\r
+                  <!--You may enter ANY elements at this point-->\r
+                  aeoliam\r
+               </xd:SignatureMethod>\r
+               <!--1 or more repetitions:-->\r
+               <xd:Reference Id="?" URI="?" Type="?">\r
+                  <!--Optional:-->\r
+                  <xd:Transforms>\r
+                     <!--1 or more repetitions:-->\r
+                     <xd:Transform Algorithm="?">\r
+                        quae\r
+                        <!--You have a CHOICE of the next 2 items at this level-->\r
+                        <!--You may enter ANY elements at this point-->\r
+                        <xd:XPath>?</xd:XPath>\r
+                        ventos\r
+                     </xd:Transform>\r
+                  </xd:Transforms>\r
+                  <xd:DigestMethod Algorithm="?">\r
+                     verrantque\r
+                     <!--You may enter ANY elements at this point-->\r
+                     temperat\r
+                  </xd:DigestMethod>\r
+                  <xd:DigestValue>cid:136114193129</xd:DigestValue>\r
+               </xd:Reference>\r
+            </xd:SignedInfo>\r
+            <xd:SignatureValue Id="?">cid:635390322550</xd:SignatureValue>\r
+            <!--Optional:-->\r
+            <xd:KeyInfo Id="?">\r
+               per\r
+               <!--You have a CHOICE of the next 8 items at this level-->\r
+               <xd:KeyName>?</xd:KeyName>\r
+               <xd:KeyValue>\r
+                  turbine\r
+                  <!--You have a CHOICE of the next 3 items at this level-->\r
+                  <xd:DSAKeyValue>\r
+                     <xd:P>cid:1107436116485</xd:P>\r
+                     <xd:Q>cid:196349591530</xd:Q>\r
+                     <!--Optional:-->\r
+                     <xd:G>cid:366503476547</xd:G>\r
+                     <xd:Y>cid:1515742805747</xd:Y>\r
+                     <!--Optional:-->\r
+                     <xd:J>cid:575405470347</xd:J>\r
+                     <xd:Seed>cid:29633627300</xd:Seed>\r
+                     <xd:PgenCounter>cid:1018157877394</xd:PgenCounter>\r
+                  </xd:DSAKeyValue>\r
+                  <xd:RSAKeyValue>\r
+                     <xd:Modulus>cid:1504701990112</xd:Modulus>\r
+                     <xd:Exponent>cid:1377500073873</xd:Exponent>\r
+                  </xd:RSAKeyValue>\r
+                  <!--You may enter ANY elements at this point-->\r
+                  circum\r
+               </xd:KeyValue>\r
+               <xd:RetrievalMethod URI="?" Type="?">\r
+                  <!--Optional:-->\r
+                  <xd:Transforms>\r
+                     <!--1 or more repetitions:-->\r
+                     <xd:Transform Algorithm="?">\r
+                        regemque\r
+                        <!--You have a CHOICE of the next 2 items at this level-->\r
+                        <!--You may enter ANY elements at this point-->\r
+                        <xd:XPath>?</xd:XPath>\r
+                        nimborum\r
+                     </xd:Transform>\r
+                  </xd:Transforms>\r
+               </xd:RetrievalMethod>\r
+               <xd:X509Data>\r
+                  <!--You have a CHOICE of the next 6 items at this level-->\r
+                  <xd:X509IssuerSerial>\r
+                     <xd:X509IssuerName>?</xd:X509IssuerName>\r
+                     <xd:X509SerialNumber>?</xd:X509SerialNumber>\r
+                  </xd:X509IssuerSerial>\r
+                  <xd:X509SKI>cid:635442055093</xd:X509SKI>\r
+                  <xd:X509SubjectName>?</xd:X509SubjectName>\r
+                  <xd:X509Certificate>cid:780058474037</xd:X509Certificate>\r
+                  <xd:X509CRL>cid:1288776657702</xd:X509CRL>\r
+                  <!--You may enter ANY elements at this point-->\r
+               </xd:X509Data>\r
+               <xd:PGPData>\r
+                  <!--You have a CHOICE of the next 2 items at this level-->\r
+                  <xd:PGPKeyID>cid:305608026705</xd:PGPKeyID>\r
+                  <!--Optional:-->\r
+                  <xd:PGPKeyPacket>cid:359822750143</xd:PGPKeyPacket>\r
+                  <!--You may enter ANY elements at this point-->\r
+                  <xd:PGPKeyPacket>cid:544991586100</xd:PGPKeyPacket>\r
+                  <!--You may enter ANY elements at this point-->\r
+               </xd:PGPData>\r
+               <xd:SPKIData>\r
+                  <xd:SPKISexp>cid:925137342620</xd:SPKISexp>\r
+                  <!--You may enter ANY elements at this point-->\r
+               </xd:SPKIData>\r
+               <xd:MgmtData>?</xd:MgmtData>\r
+               <!--You may enter ANY elements at this point-->\r
+               fremunt\r
+            </xd:KeyInfo>\r
+            <!--Zero or more repetitions:-->\r
+            <xd:Object Id="?" MimeType="?" Encoding="?">\r
+               foedere\r
+               <!--You may enter ANY elements at this point-->\r
+               ferant\r
+            </xd:Object>\r
+         </xd:Signature>\r
+      </dat:WageReportsOnePolicyNoRequestToIR>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetWageReportsOnePolicyNo"/></con:call></con:operation></con:interface><con:mockService id="01d47446-6afd-4026-9e2c-05136dda2d69" port="8080" path="/" host="YAPLT076" name="MockService1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.mock.WsdlMockService@require-soap-action">false</con:setting></con:settings><con:properties/><con:mockOperation name="GetWageReportsOneIncomeEarner" id="de6ff68b-d2bc-4665-b98e-02ff86bbfc54" interface="WageReportQuerySoap" operation="GetWageReportsOneIncomeEarner"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>XPATH</con:dispatchStyle><con:response name="Response 1" id="faf2f476-ef06-492d-8716-a92c8ac60cee" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wag="http://www.tulorekisteri.fi/2017/1/WageReportsFromIR" xmlns:xd="http://www.w3.org/2000/09/xmldsig#">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <wag:WageReportsFromIR>
+         <Subscription>
+            <QueryDataType>1</QueryDataType>
+            <!--Optional:-->
+            <QueryProfile>?</QueryProfile>
+            <ProductionEnvironment>?</ProductionEnvironment>
+            <!--Optional:-->
+            <IRMainSubscriptionId>?</IRMainSubscriptionId>
+            <!--Optional:-->
+            <IRSubscriptionId>?</IRSubscriptionId>
+            <!--Optional:-->
+            <MainSubscriptionId>?</MainSubscriptionId>
+            <!--Optional:-->
+            <SubscriptionId>?</SubscriptionId>
+         </Subscription>
+         <!--Optional:-->
+         <Query>
+            <IRQueryId>?</IRQueryId>
+            <QueryTimestamp>?</QueryTimestamp>
+            <QueryTimespanStart>?</QueryTimespanStart>
+            <QueryTimespanEnd>?</QueryTimespanEnd>
+         </Query>
+         <Summary>
+            <NrOfReports>?</NrOfReports>
+         </Summary>
+         <!--Optional:-->
+         <MessageErrors>
+            <!--1 or more repetitions:-->
+            <ErrorInfo>
+               <ErrorCode>?</ErrorCode>
+               <ErrorMessage>?</ErrorMessage>
+               <!--Optional:-->
+               <ErrorDetails>?</ErrorDetails>
+            </ErrorInfo>
+         </MessageErrors>
+         <!--Optional:-->
+         <DeliveryErrors>
+            <!--1 or more repetitions:-->
+            <ErrorInfo>
+               <ErrorCode>?</ErrorCode>
+               <ErrorMessage>?</ErrorMessage>
+               <!--Optional:-->
+               <ErrorDetails>?</ErrorDetails>
+            </ErrorInfo>
+         </DeliveryErrors>
+         <!--Optional:-->
+         <Reports>
+            <!--1 or more repetitions:-->
+            <Report>
+               <DeliveryData>
+                  <Timestamp>?</Timestamp>
+                  <!--Optional:-->
+                  <Source>?</Source>
+                  <!--Optional:-->
+                  <DeliveryId>?</DeliveryId>
+                  <IRDeliveryId>?</IRDeliveryId>
+                  <!--Optional:-->
+                  <DeliveryToIRChannelCode>?</DeliveryToIRChannelCode>
+                  <PaymentPeriod>
+                     <PaymentDate>?</PaymentDate>
+                     <StartDate>?</StartDate>
+                     <EndDate>?</EndDate>
+                  </PaymentPeriod>
+                  <!--Optional:-->
+                  <ContactPersons>
+                     <!--1 or more repetitions:-->
+                     <ContactPerson>
+                        <!--Optional:-->
+                        <Name>?</Name>
+                        <!--Optional:-->
+                        <Telephone>?</Telephone>
+                        <!--Optional:-->
+                        <Email>?</Email>
+                        <!--Optional:-->
+                        <ResponsibilityCode>?</ResponsibilityCode>
+                     </ContactPerson>
+                  </ContactPersons>
+                  <!--Optional:-->
+                  <Payer>
+                     <!--Optional:-->
+                     <PayerIds>
+                        <!--1 or more repetitions:-->
+                        <Id>
+                           <!--Optional:-->
+                           <Type>?</Type>
+                           <!--Optional:-->
+                           <Code>?</Code>
+                           <!--Optional:-->
+                           <CountryCode>?</CountryCode>
+                           <!--Optional:-->
+                           <CountryName>?</CountryName>
+                        </Id>
+                     </PayerIds>
+                     <!--Optional:-->
+                     <PayerBasic>
+                        <!--Optional:-->
+                        <MissingId>?</MissingId>
+                        <!--Optional:-->
+                        <CompanyName>YAP</CompanyName>
+                        <!--Optional:-->
+                        <LastName>?</LastName>
+                        <!--Optional:-->
+                        <FirstName>?</FirstName>
+                        <!--Optional:-->
+                        <BirthDate>?</BirthDate>
+                        <!--Optional:-->
+                        <Language>?</Language>
+                     </PayerBasic>
+                     <!--Optional:-->
+                     <Address>
+                        <!--Optional:-->
+                        <Co>?</Co>
+                        <!--Optional:-->
+                        <Street>?</Street>
+                        <!--Optional:-->
+                        <POBox>?</POBox>
+                        <!--Optional:-->
+                        <PostalCode>?</PostalCode>
+                        <!--Optional:-->
+                        <PostOffice>?</PostOffice>
+                        <!--Optional:-->
+                        <CountryCode>?</CountryCode>
+                        <!--Optional:-->
+                        <CountryName>?</CountryName>
+                     </Address>
+                     <!--Optional:-->
+                     <SubOrgs>
+                        <!--1 or more repetitions:-->
+                        <SubOrg>
+                           <!--Optional:-->
+                           <Type>?</Type>
+                           <!--Optional:-->
+                           <Code>?</Code>
+                        </SubOrg>
+                     </SubOrgs>
+                     <!--Optional:-->
+                     <PayerOther>
+                        <!--Optional:-->
+                        <SensitiveInfoIncluded>?</SensitiveInfoIncluded>
+                        <PayerTypes>
+                           <!--1 or more repetitions:-->
+                           <Code>?</Code>
+                        </PayerTypes>
+                     </PayerOther>
+                     <!--Optional:-->
+                     <SubstitutePayer>
+                        <!--Optional:-->
+                        <Acts>?</Acts>
+                        <!--Optional:-->
+                        <EmployerId>
+                           <!--Optional:-->
+                           <Type>?</Type>
+                           <!--Optional:-->
+                           <Code>?</Code>
+                           <!--Optional:-->
+                           <CountryCode>?</CountryCode>
+                           <!--Optional:-->
+                           <CountryName>?</CountryName>
+                        </EmployerId>
+                        <!--Optional:-->
+                        <EmployerName>?</EmployerName>
+                        <!--Optional:-->
+                        <WageSec>?</WageSec>
+                     </SubstitutePayer>
+                  </Payer>
+               </DeliveryData>
+               <ReportData>
+                  <IRReportId>?</IRReportId>
+                  <!--Optional:-->
+                  <ReportId>?</ReportId>
+                  <ReportStatus>?</ReportStatus>
+                  <ReportVersion>?</ReportVersion>
+                  <ReceivedTimestamp>?</ReceivedTimestamp>
+                  <!--Optional:-->
+                  <CreatedTimestamp>?</CreatedTimestamp>
+               </ReportData>
+               <!--Optional:-->
+               <IncomeEarner>
+                  <!--Optional:-->
+                  <IncomeEarnerIds>
+                     <!--1 or more repetitions:-->
+                     <Id>
+                        <!--Optional:-->
+                        <Type>?</Type>
+                        <!--Optional:-->
+                        <Code>?</Code>
+                        <!--Optional:-->
+                        <CountryCode>?</CountryCode>
+                        <!--Optional:-->
+                        <CountryName>?</CountryName>
+                     </Id>
+                  </IncomeEarnerIds>
+                  <!--Optional:-->
+                  <IncomeEarnerBasic>
+                     <!--Optional:-->
+                     <MissingId>?</MissingId>
+                     <!--Optional:-->
+                     <CompanyName>?</CompanyName>
+                     <!--Optional:-->
+                     <LastName>?</LastName>
+                     <!--Optional:-->
+                     <FirstName>?</FirstName>
+                     <!--Optional:-->
+                     <BirthDate>?</BirthDate>
+                     <!--Optional:-->
+                     <Gender>?</Gender>
+                  </IncomeEarnerBasic>
+                  <!--Optional:-->
+                  <Addresses>
+                     <!--1 or more repetitions:-->
+                     <TypedAddress>
+                        <!--Optional:-->
+                        <AddressType>?</AddressType>
+                        <!--Optional:-->
+                        <Co>?</Co>
+                        <!--Optional:-->
+                        <Street>?</Street>
+                        <!--Optional:-->
+                        <POBox>?</POBox>
+                        <!--Optional:-->
+                        <PostalCode>?</PostalCode>
+                        <!--Optional:-->
+                        <PostOffice>?</PostOffice>
+                        <!--Optional:-->
+                        <CountryCode>?</CountryCode>
+                        <!--Optional:-->
+                        <CountryName>?</CountryName>
+                     </TypedAddress>
+                  </Addresses>
+                  <!--Optional:-->
+                  <SubOrgs>
+                     <!--1 or more repetitions:-->
+                     <SubOrg>
+                        <!--Optional:-->
+                        <Type>?</Type>
+                        <!--Optional:-->
+                        <Code>?</Code>
+                     </SubOrg>
+                  </SubOrgs>
+                  <!--Optional:-->
+                  <Employment>
+                     <!--Optional:-->
+                     <Employed>?</Employed>
+                     <!--Optional:-->
+                     <EmploymentCode>?</EmploymentCode>
+                     <!--Optional:-->
+                     <TermCode>?</TermCode>
+                     <!--Optional:-->
+                     <PartTime>?</PartTime>
+                     <!--Optional:-->
+                     <HoursPerWeek>?</HoursPerWeek>
+                     <!--Optional:-->
+                     <PaymentTypes>
+                        <!--1 or more repetitions:-->
+                        <PaymentType>?</PaymentType>
+                     </PaymentTypes>
+                     <!--Optional:-->
+                     <EmploymentPeriods>
+                        <!--1 or more repetitions:-->
+                        <Period>
+                           <!--Optional:-->
+                           <StartDate>?</StartDate>
+                           <!--Optional:-->
+                           <EndDate>?</EndDate>
+                        </Period>
+                     </EmploymentPeriods>
+                     <!--Optional:-->
+                     <EmploymentEndings>
+                        <!--1 or more repetitions:-->
+                        <EmploymentEnding>
+                           <!--Optional:-->
+                           <Type>?</Type>
+                           <!--Optional:-->
+                           <Code>?</Code>
+                        </EmploymentEnding>
+                     </EmploymentEndings>
+                  </Employment>
+                  <!--Optional:-->
+                  <Professions>
+                     <!--1 or more repetitions:-->
+                     <Profession>
+                        <!--Optional:-->
+                        <Type>?</Type>
+                        <!--Optional:-->
+                        <Code>?</Code>
+                        <!--Optional:-->
+                        <Title>?</Title>
+                     </Profession>
+                  </Professions>
+                  <!--Optional:-->
+                  <EmploymentRegs>
+                     <!--1 or more repetitions:-->
+                     <EmploymentReg>
+                        <!--Optional:-->
+                        <Type>?</Type>
+                        <!--Optional:-->
+                        <Code>?</Code>
+                     </EmploymentReg>
+                  </EmploymentRegs>
+                  <!--Optional:-->
+                  <PlaceOfBusiness>
+                     <!--Optional:-->
+                     <Code>?</Code>
+                     <!--Optional:-->
+                     <Street>?</Street>
+                     <!--Optional:-->
+                     <PostalCode>?</PostalCode>
+                     <!--Optional:-->
+                     <PostOffice>?</PostOffice>
+                     <!--Optional:-->
+                     <CountryCode>?</CountryCode>
+                     <!--Optional:-->
+                     <CountryName>?</CountryName>
+                  </PlaceOfBusiness>
+                  <!--Optional:-->
+                  <PensionInsurance>
+                     <!--Optional:-->
+                     <PensionActCode>?</PensionActCode>
+                     <!--Optional:-->
+                     <PensionProvIdCode>?</PensionProvIdCode>
+                     <!--Optional:-->
+                     <PensionPolicyNo>?</PensionPolicyNo>
+                  </PensionInsurance>
+                  <!--Optional:-->
+                  <AccidentInsurance>
+                     <!--Optional:-->
+                     <AccInsProvId>
+                        <!--Optional:-->
+                        <Type>?</Type>
+                        <!--Optional:-->
+                        <Code>?</Code>
+                        <!--Optional:-->
+                        <CountryCode>?</CountryCode>
+                        <!--Optional:-->
+                        <CountryName>?</CountryName>
+                     </AccInsProvId>
+                     <!--Optional:-->
+                     <AccInsPolicyNo>?</AccInsPolicyNo>
+                  </AccidentInsurance>
+                  <!--Optional:-->
+                  <InsuranceExceptions>
+                     <!--1 or more repetitions:-->
+                     <ExceptionCode>?</ExceptionCode>
+                  </InsuranceExceptions>
+                  <!--Optional:-->
+                  <InternationalData>
+                     <!--Optional:-->
+                     <PostedCertCode>?</PostedCertCode>
+                     <!--Optional:-->
+                     <NonResident>?</NonResident>
+                     <!--Optional:-->
+                     <NonResidentCountryCode>?</NonResidentCountryCode>
+                     <!--Optional:-->
+                     <NonResidentCountryName>?</NonResidentCountryName>
+                     <!--Optional:-->
+                     <SubToWithhold>?</SubToWithhold>
+                     <!--Optional:-->
+                     <TaxTreatyCountryCode>?</TaxTreatyCountryCode>
+                     <!--Optional:-->
+                     <WorkForm>
+                        <!--1 or more repetitions:-->
+                        <FormCode>?</FormCode>
+                     </WorkForm>
+                  </InternationalData>
+                  <!--Optional:-->
+                  <IncomeEarnerOther>
+                     <!--Optional:-->
+                     <SensitiveInfoIncluded>?</SensitiveInfoIncluded>
+                     <!--Optional:-->
+                     <CBACode>?</CBACode>
+                     <!--Optional:-->
+                     <IncomeEarnerTypes>
+                        <!--1 or more repetitions:-->
+                        <IncomeEarnerType>?</IncomeEarnerType>
+                     </IncomeEarnerTypes>
+                     <!--Optional:-->
+                     <Payments>
+                        <!--1 or more repetitions:-->
+                        <Payment>
+                           <!--Optional:-->
+                           <PaymentType>?</PaymentType>
+                           <!--Optional:-->
+                           <PaymentRef>?</PaymentRef>
+                           <!--Optional:-->
+                           <PaymentSpecifier>?</PaymentSpecifier>
+                        </Payment>
+                     </Payments>
+                  </IncomeEarnerOther>
+               </IncomeEarner>
+               <!--Optional:-->
+               <Transactions>
+                  <!--1 or more repetitions:-->
+                  <Transaction>
+                     <!--Optional:-->
+                     <TransactionBasic>
+                        <!--Optional:-->
+                        <TransactionCode>?</TransactionCode>
+                        <!--Optional:-->
+                        <Amount>?</Amount>
+                        <!--Optional:-->
+                        <NoMoney>?</NoMoney>
+                        <!--Optional:-->
+                        <OneOff>?</OneOff>
+                        <!--Optional:-->
+                        <UnjustEnrichment>?</UnjustEnrichment>
+                        <!--Optional:-->
+                        <Recovery>?</Recovery>
+                     </TransactionBasic>
+                     <!--Optional:-->
+                     <InsuranceData>
+                        <!--1 or more repetitions:-->
+                        <TransactionInclusion>
+                           <!--Optional:-->
+                           <InsuranceCode>?</InsuranceCode>
+                           <!--Optional:-->
+                           <Included>?</Included>
+                        </TransactionInclusion>
+                     </InsuranceData>
+                     <!--Optional:-->
+                     <EarningPeriods>
+                        <!--1 or more repetitions:-->
+                        <EarningPeriod>
+                           <!--Optional:-->
+                           <StartDate>?</StartDate>
+                           <!--Optional:-->
+                           <EndDate>?</EndDate>
+                        </EarningPeriod>
+                     </EarningPeriods>
+                     <!--Optional:-->
+                     <UnitWages>
+                        <!--1 or more repetitions:-->
+                        <UnitWage>
+                           <!--Optional:-->
+                           <UnitPrice>?</UnitPrice>
+                           <!--Optional:-->
+                           <UnitAmount>?</UnitAmount>
+                           <!--Optional:-->
+                           <UnitCode>?</UnitCode>
+                        </UnitWage>
+                     </UnitWages>
+                     <!--Optional:-->
+                     <CarBenefit>
+                        <!--Optional:-->
+                        <CarBenefitCode>?</CarBenefitCode>
+                        <!--Optional:-->
+                        <AgeGroupCode>?</AgeGroupCode>
+                        <!--Optional:-->
+                        <Kilometers>?</Kilometers>
+                     </CarBenefit>
+                     <!--Optional:-->
+                     <MealBenefit>
+                        <TaxValue>?</TaxValue>
+                     </MealBenefit>
+                     <!--Optional:-->
+                     <OtherBenefit>
+                        <!--1 or more repetitions:-->
+                        <BenefitCode>?</BenefitCode>
+                     </OtherBenefit>
+                     <!--Optional:-->
+                     <SailorIncome>
+                        <!--Optional:-->
+                        <SailorIncome>?</SailorIncome>
+                        <!--Optional:-->
+                        <CrossTradeTime>?</CrossTradeTime>
+                        <!--Optional:-->
+                        <WithdrawalPeriod>
+                           <!--Optional:-->
+                           <StartDate>?</StartDate>
+                           <!--Optional:-->
+                           <EndDate>?</EndDate>
+                        </WithdrawalPeriod>
+                     </SailorIncome>
+                     <!--Optional:-->
+                     <RecoveryData>
+                        <!--Optional:-->
+                        <RecoveryDate>?</RecoveryDate>
+                        <!--Optional:-->
+                        <Withhold>?</Withhold>
+                        <!--Optional:-->
+                        <OrigPaymentPeriods>
+                           <!--1 or more repetitions:-->
+                           <OrigPaymentPeriod>
+                              <!--Optional:-->
+                              <PaymentDate>?</PaymentDate>
+                              <!--Optional:-->
+                              <StartDate>?</StartDate>
+                              <!--Optional:-->
+                              <EndDate>?</EndDate>
+                           </OrigPaymentPeriod>
+                        </OrigPaymentPeriods>
+                     </RecoveryData>
+                     <!--Optional:-->
+                     <DailyAllowance>
+                        <!--1 or more repetitions:-->
+                        <AllowanceCode>?</AllowanceCode>
+                     </DailyAllowance>
+                     <!--Optional:-->
+                     <KmAllowance>
+                        <Kilometers>?</Kilometers>
+                     </KmAllowance>
+                     <!--Optional:-->
+                     <SixMonthRule>
+                        <!--Optional:-->
+                        <Applicable>?</Applicable>
+                        <!--Optional:-->
+                        <CountryCode>?</CountryCode>
+                        <!--Optional:-->
+                        <CountryName>?</CountryName>
+                     </SixMonthRule>
+                  </Transaction>
+               </Transactions>
+               <!--Optional:-->
+               <ForeignLeasedWork>
+                  <!--Optional:-->
+                  <Representative>
+                     <!--Optional:-->
+                     <SensitiveInfoIncluded>?</SensitiveInfoIncluded>
+                     <!--Optional:-->
+                     <RepresentativeIds>
+                        <!--1 or more repetitions:-->
+                        <Id>
+                           <!--Optional:-->
+                           <Type>?</Type>
+                           <!--Optional:-->
+                           <Code>?</Code>
+                           <!--Optional:-->
+                           <CountryCode>?</CountryCode>
+                           <!--Optional:-->
+                           <CountryName>?</CountryName>
+                        </Id>
+                     </RepresentativeIds>
+                     <!--Optional:-->
+                     <Name>?</Name>
+                     <!--Optional:-->
+                     <Address>
+                        <!--Optional:-->
+                        <Co>?</Co>
+                        <!--Optional:-->
+                        <Street>?</Street>
+                        <!--Optional:-->
+                        <POBox>?</POBox>
+                        <!--Optional:-->
+                        <PostalCode>?</PostalCode>
+                        <!--Optional:-->
+                        <PostOffice>?</PostOffice>
+                        <!--Optional:-->
+                        <CountryCode>?</CountryCode>
+                        <!--Optional:-->
+                        <CountryName>?</CountryName>
+                     </Address>
+                     <!--Optional:-->
+                     <RepresentativeReports>?</RepresentativeReports>
+                  </Representative>
+                  <!--Optional:-->
+                  <EstAmount>?</EstAmount>
+                  <!--Optional:-->
+                  <FinServiceRecipient>
+                     <FinServiceRecipientIds>
+                        <!--1 or more repetitions:-->
+                        <Id>
+                           <!--Optional:-->
+                           <Type>?</Type>
+                           <!--Optional:-->
+                           <Code>?</Code>
+                           <!--Optional:-->
+                           <CountryCode>?</CountryCode>
+                           <!--Optional:-->
+                           <CountryName>?</CountryName>
+                        </Id>
+                     </FinServiceRecipientIds>
+                  </FinServiceRecipient>
+               </ForeignLeasedWork>
+               <!--Optional:-->
+               <StayPeriodsInFinland>
+                  <!--Optional:-->
+                  <NoStayPeriods>?</NoStayPeriods>
+                  <!--Zero or more repetitions:-->
+                  <Period>
+                     <!--Optional:-->
+                     <StartDate>?</StartDate>
+                     <!--Optional:-->
+                     <EndDate>?</EndDate>
+                  </Period>
+               </StayPeriodsInFinland>
+               <!--Optional:-->
+               <WorkPeriodsInFinland>
+                  <!--1 or more repetitions:-->
+                  <WorkPeriodInFinland>
+                     <!--Optional:-->
+                     <StartDate>?</StartDate>
+                     <!--Optional:-->
+                     <EndDate>?</EndDate>
+                     <!--Optional:-->
+                     <WorkDays>?</WorkDays>
+                  </WorkPeriodInFinland>
+               </WorkPeriodsInFinland>
+               <!--Optional:-->
+               <WorkCountries>
+                  <!--1 or more repetitions:-->
+                  <WorkCountry>
+                     <!--Optional:-->
+                     <WorkCountryCode>?</WorkCountryCode>
+                     <!--Optional:-->
+                     <WorkCountryName>?</WorkCountryName>
+                     <!--Optional:-->
+                     <WorkMunicipalities>
+                        <!--1 or more repetitions:-->
+                        <WorkMunicipality>?</WorkMunicipality>
+                     </WorkMunicipalities>
+                     <!--Optional:-->
+                     <WorkCountryAddress>
+                        <!--Optional:-->
+                        <Co>?</Co>
+                        <!--Optional:-->
+                        <Street>?</Street>
+                        <!--Optional:-->
+                        <POBox>?</POBox>
+                        <!--Optional:-->
+                        <PostalCode>?</PostalCode>
+                        <!--Optional:-->
+                        <PostOffice>?</PostOffice>
+                        <!--Optional:-->
+                        <CountryCode>?</CountryCode>
+                        <!--Optional:-->
+                        <CountryName>?</CountryName>
+                     </WorkCountryAddress>
+                     <!--Optional:-->
+                     <ServiceRecipient>
+                        <!--Optional:-->
+                        <SensitiveInfoIncluded>?</SensitiveInfoIncluded>
+                        <!--Optional:-->
+                        <ServiceRecipientIds>
+                           <!--1 or more repetitions:-->
+                           <Id>
+                              <!--Optional:-->
+                              <Type>?</Type>
+                              <!--Optional:-->
+                              <Code>?</Code>
+                              <!--Optional:-->
+                              <CountryCode>?</CountryCode>
+                              <!--Optional:-->
+                              <CountryName>?</CountryName>
+                           </Id>
+                        </ServiceRecipientIds>
+                        <!--Optional:-->
+                        <Name>?</Name>
+                        <!--Optional:-->
+                        <ServiceRecipientAddress>
+                           <!--Optional:-->
+                           <Co>?</Co>
+                           <!--Optional:-->
+                           <Street>?</Street>
+                           <!--Optional:-->
+                           <POBox>?</POBox>
+                           <!--Optional:-->
+                           <PostalCode>?</PostalCode>
+                           <!--Optional:-->
+                           <PostOffice>?</PostOffice>
+                           <!--Optional:-->
+                           <CountryCode>?</CountryCode>
+                           <!--Optional:-->
+                           <CountryName>?</CountryName>
+                        </ServiceRecipientAddress>
+                     </ServiceRecipient>
+                     <!--Optional:-->
+                     <StayPeriodsAbroad>
+                        <!--1 or more repetitions:-->
+                        <Period>
+                           <!--Optional:-->
+                           <StartDate>?</StartDate>
+                           <!--Optional:-->
+                           <EndDate>?</EndDate>
+                        </Period>
+                     </StayPeriodsAbroad>
+                     <!--Optional:-->
+                     <WorkPeriodsAbroad>
+                        <!--1 or more repetitions:-->
+                        <Period>
+                           <!--Optional:-->
+                           <StartDate>?</StartDate>
+                           <!--Optional:-->
+                           <EndDate>?</EndDate>
+                        </Period>
+                     </WorkPeriodsAbroad>
+                     <!--Optional:-->
+                     <TaxingRight>?</TaxingRight>
+                     <!--Optional:-->
+                     <BurdensResultOfPE>?</BurdensResultOfPE>
+                     <!--Optional:-->
+                     <WagePerMonth>?</WagePerMonth>
+                     <!--Optional:-->
+                     <Remunerations>
+                        <!--1 or more repetitions:-->
+                        <RemunerationCode>?</RemunerationCode>
+                     </Remunerations>
+                  </WorkCountry>
+               </WorkCountries>
+               <!--Optional:-->
+               <Absence>
+                  <!--Optional:-->
+                  <AbsenceRepStartDate>?</AbsenceRepStartDate>
+                  <!--Optional:-->
+                  <AbsenceRepEndDate>?</AbsenceRepEndDate>
+                  <!--Optional:-->
+                  <UnpaidAbsence>
+                     <UnpaidAbsencePeriods>
+                        <!--1 or more repetitions:-->
+                        <UnpaidAbsencePeriod>
+                           <!--Optional:-->
+                           <StartDate>?</StartDate>
+                           <!--Optional:-->
+                           <EndDate>?</EndDate>
+                           <!--Optional:-->
+                           <AbsenceDays>?</AbsenceDays>
+                           <!--Optional:-->
+                           <CauseCode>?</CauseCode>
+                        </UnpaidAbsencePeriod>
+                     </UnpaidAbsencePeriods>
+                  </UnpaidAbsence>
+                  <!--Optional:-->
+                  <PaidAbsence>
+                     <PaidAbsencePeriods>
+                        <!--1 or more repetitions:-->
+                        <PaidAbsencePeriod>
+                           <!--Optional:-->
+                           <StartDate>?</StartDate>
+                           <!--Optional:-->
+                           <EndDate>?</EndDate>
+                           <!--Optional:-->
+                           <AbsenceDays>?</AbsenceDays>
+                           <!--Optional:-->
+                           <AbsenceUntil>?</AbsenceUntil>
+                           <!--Optional:-->
+                           <CauseCode>?</CauseCode>
+                           <!--Optional:-->
+                           <Amount>?</Amount>
+                           <!--Optional:-->
+                           <ReimbApp>
+                              <!--1 or more repetitions:-->
+                              <ReimbPayment>
+                                 <!--Optional:-->
+                                 <PaymentType>?</PaymentType>
+                                 <!--Optional:-->
+                                 <PaymentRef>?</PaymentRef>
+                                 <!--Optional:-->
+                                 <PaymentSpecifier>?</PaymentSpecifier>
+                              </ReimbPayment>
+                           </ReimbApp>
+                        </PaidAbsencePeriod>
+                     </PaidAbsencePeriods>
+                  </PaidAbsence>
+               </Absence>
+            </Report>
+         </Reports>
+         <xd:Signature Id="?">
+            <xd:SignedInfo Id="?">
+               <xd:CanonicalizationMethod Algorithm="?">
+                  e
+                  <!--You may enter ANY elements at this point-->
+                  gero
+               </xd:CanonicalizationMethod>
+               <xd:SignatureMethod Algorithm="?">
+                  cum
+                  <!--Optional:-->
+                  <xd:HMACOutputLength>?</xd:HMACOutputLength>
+                  sonoras
+                  <!--You may enter ANY elements at this point-->
+                  aeoliam
+               </xd:SignatureMethod>
+               <!--1 or more repetitions:-->
+               <xd:Reference Id="?" URI="?" Type="?">
+                  <!--Optional:-->
+                  <xd:Transforms>
+                     <!--1 or more repetitions:-->
+                     <xd:Transform Algorithm="?">
+                        quae
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <!--You may enter ANY elements at this point-->
+                        <xd:XPath>?</xd:XPath>
+                        ventos
+                     </xd:Transform>
+                  </xd:Transforms>
+                  <xd:DigestMethod Algorithm="?">
+                     verrantque
+                     <!--You may enter ANY elements at this point-->
+                     temperat
+                  </xd:DigestMethod>
+                  <xd:DigestValue>cid:647157468742</xd:DigestValue>
+               </xd:Reference>
+            </xd:SignedInfo>
+            <xd:SignatureValue Id="?">cid:1033065353944</xd:SignatureValue>
+            <!--Optional:-->
+            <xd:KeyInfo Id="?">
+               per
+               <!--You have a CHOICE of the next 8 items at this level-->
+               <xd:KeyName>?</xd:KeyName>
+               <xd:KeyValue>
+                  turbine
+                  <!--You have a CHOICE of the next 3 items at this level-->
+                  <xd:DSAKeyValue>
+                     <xd:P>cid:718444778462</xd:P>
+                     <xd:Q>cid:689252293910</xd:Q>
+                     <!--Optional:-->
+                     <xd:G>cid:242534355599</xd:G>
+                     <xd:Y>cid:85204017716</xd:Y>
+                     <!--Optional:-->
+                     <xd:J>cid:47163278519</xd:J>
+                     <xd:Seed>cid:1185932156429</xd:Seed>
+                     <xd:PgenCounter>cid:352193841483</xd:PgenCounter>
+                  </xd:DSAKeyValue>
+                  <xd:RSAKeyValue>
+                     <xd:Modulus>cid:947285814482</xd:Modulus>
+                     <xd:Exponent>cid:123067244383</xd:Exponent>
+                  </xd:RSAKeyValue>
+                  <!--You may enter ANY elements at this point-->
+                  circum
+               </xd:KeyValue>
+               <xd:RetrievalMethod URI="?" Type="?">
+                  <!--Optional:-->
+                  <xd:Transforms>
+                     <!--1 or more repetitions:-->
+                     <xd:Transform Algorithm="?">
+                        regemque
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <!--You may enter ANY elements at this point-->
+                        <xd:XPath>?</xd:XPath>
+                        nimborum
+                     </xd:Transform>
+                  </xd:Transforms>
+               </xd:RetrievalMethod>
+               <xd:X509Data>
+                  <!--You have a CHOICE of the next 6 items at this level-->
+                  <xd:X509IssuerSerial>
+                     <xd:X509IssuerName>?</xd:X509IssuerName>
+                     <xd:X509SerialNumber>?</xd:X509SerialNumber>
+                  </xd:X509IssuerSerial>
+                  <xd:X509SKI>cid:1437029161008</xd:X509SKI>
+                  <xd:X509SubjectName>?</xd:X509SubjectName>
+                  <xd:X509Certificate>cid:611268707339</xd:X509Certificate>
+                  <xd:X509CRL>cid:67106851987</xd:X509CRL>
+                  <!--You may enter ANY elements at this point-->
+               </xd:X509Data>
+               <xd:PGPData>
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <xd:PGPKeyID>cid:463487308265</xd:PGPKeyID>
+                  <!--Optional:-->
+                  <xd:PGPKeyPacket>cid:1067709365449</xd:PGPKeyPacket>
+                  <!--You may enter ANY elements at this point-->
+                  <xd:PGPKeyPacket>cid:262492830438</xd:PGPKeyPacket>
+                  <!--You may enter ANY elements at this point-->
+               </xd:PGPData>
+               <xd:SPKIData>
+                  <xd:SPKISexp>cid:624910409613</xd:SPKISexp>
+                  <!--You may enter ANY elements at this point-->
+               </xd:SPKIData>
+               <xd:MgmtData>?</xd:MgmtData>
+               <!--You may enter ANY elements at this point-->
+               fremunt
+            </xd:KeyInfo>
+            <!--Zero or more repetitions:-->
+            <xd:Object Id="?" MimeType="?" Encoding="?">
+               foedere
+               <!--You may enter ANY elements at this point-->
+               ferant
+            </xd:Object>
+         </xd:Signature>
+      </wag:WageReportsFromIR>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetWageReportsOneIncomeEarner"/></con:response><con:response name="Response - Base" id="faf2f476-ef06-492d-8716-a92c8ac60cee" httpResponseStatus="200" encoding="UTF-8"><con:settings/><con:responseContent><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wag="http://www.tulorekisteri.fi/2017/1/WageReportsFromIR" xmlns:xd="http://www.w3.org/2000/09/xmldsig#">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <wag:WageReportsFromIR>
+         <Subscription>
+            <QueryDataType>?</QueryDataType>
+            <!--Optional:-->
+            <QueryProfile>?</QueryProfile>
+            <ProductionEnvironment>?</ProductionEnvironment>
+            <!--Optional:-->
+            <IRMainSubscriptionId>?</IRMainSubscriptionId>
+            <!--Optional:-->
+            <IRSubscriptionId>?</IRSubscriptionId>
+            <!--Optional:-->
+            <MainSubscriptionId>?</MainSubscriptionId>
+            <!--Optional:-->
+            <SubscriptionId>?</SubscriptionId>
+         </Subscription>
+         <!--Optional:-->
+         <Query>
+            <IRQueryId>?</IRQueryId>
+            <QueryTimestamp>?</QueryTimestamp>
+            <QueryTimespanStart>?</QueryTimespanStart>
+            <QueryTimespanEnd>?</QueryTimespanEnd>
+         </Query>
+         <Summary>
+            <NrOfReports>?</NrOfReports>
+         </Summary>
+         <!--Optional:-->
+         <MessageErrors>
+            <!--1 or more repetitions:-->
+            <ErrorInfo>
+               <ErrorCode>?</ErrorCode>
+               <ErrorMessage>?</ErrorMessage>
+               <!--Optional:-->
+               <ErrorDetails>?</ErrorDetails>
+            </ErrorInfo>
+         </MessageErrors>
+         <!--Optional:-->
+         <DeliveryErrors>
+            <!--1 or more repetitions:-->
+            <ErrorInfo>
+               <ErrorCode>?</ErrorCode>
+               <ErrorMessage>?</ErrorMessage>
+               <!--Optional:-->
+               <ErrorDetails>?</ErrorDetails>
+            </ErrorInfo>
+         </DeliveryErrors>
+         <!--Optional:-->
+         <Reports>
+            <!--1 or more repetitions:-->
+            <Report>
+               <DeliveryData>
+                  <Timestamp>?</Timestamp>
+                  <!--Optional:-->
+                  <Source>?</Source>
+                  <!--Optional:-->
+                  <DeliveryId>?</DeliveryId>
+                  <IRDeliveryId>?</IRDeliveryId>
+                  <!--Optional:-->
+                  <DeliveryToIRChannelCode>?</DeliveryToIRChannelCode>
+                  <PaymentPeriod>
+                     <PaymentDate>?</PaymentDate>
+                     <StartDate>?</StartDate>
+                     <EndDate>?</EndDate>
+                  </PaymentPeriod>
+                  <!--Optional:-->
+                  <ContactPersons>
+                     <!--1 or more repetitions:-->
+                     <ContactPerson>
+                        <!--Optional:-->
+                        <Name>?</Name>
+                        <!--Optional:-->
+                        <Telephone>?</Telephone>
+                        <!--Optional:-->
+                        <Email>?</Email>
+                        <!--Optional:-->
+                        <ResponsibilityCode>?</ResponsibilityCode>
+                     </ContactPerson>
+                  </ContactPersons>
+                  <!--Optional:-->
+                  <Payer>
+                     <!--Optional:-->
+                     <PayerIds>
+                        <!--1 or more repetitions:-->
+                        <Id>
+                           <!--Optional:-->
+                           <Type>?</Type>
+                           <!--Optional:-->
+                           <Code>?</Code>
+                           <!--Optional:-->
+                           <CountryCode>?</CountryCode>
+                           <!--Optional:-->
+                           <CountryName>?</CountryName>
+                        </Id>
+                     </PayerIds>
+                     <!--Optional:-->
+                     <PayerBasic>
+                        <!--Optional:-->
+                        <MissingId>?</MissingId>
+                        <!--Optional:-->
+                        <CompanyName>YAP</CompanyName>
+                        <!--Optional:-->
+                        <LastName>?</LastName>
+                        <!--Optional:-->
+                        <FirstName>?</FirstName>
+                        <!--Optional:-->
+                        <BirthDate>?</BirthDate>
+                        <!--Optional:-->
+                        <Language>?</Language>
+                     </PayerBasic>
+                     <!--Optional:-->
+                     <Address>
+                        <!--Optional:-->
+                        <Co>?</Co>
+                        <!--Optional:-->
+                        <Street>?</Street>
+                        <!--Optional:-->
+                        <POBox>?</POBox>
+                        <!--Optional:-->
+                        <PostalCode>?</PostalCode>
+                        <!--Optional:-->
+                        <PostOffice>?</PostOffice>
+                        <!--Optional:-->
+                        <CountryCode>?</CountryCode>
+                        <!--Optional:-->
+                        <CountryName>?</CountryName>
+                     </Address>
+                     <!--Optional:-->
+                     <SubOrgs>
+                        <!--1 or more repetitions:-->
+                        <SubOrg>
+                           <!--Optional:-->
+                           <Type>?</Type>
+                           <!--Optional:-->
+                           <Code>?</Code>
+                        </SubOrg>
+                     </SubOrgs>
+                     <!--Optional:-->
+                     <PayerOther>
+                        <!--Optional:-->
+                        <SensitiveInfoIncluded>?</SensitiveInfoIncluded>
+                        <PayerTypes>
+                           <!--1 or more repetitions:-->
+                           <Code>?</Code>
+                        </PayerTypes>
+                     </PayerOther>
+                     <!--Optional:-->
+                     <SubstitutePayer>
+                        <!--Optional:-->
+                        <Acts>?</Acts>
+                        <!--Optional:-->
+                        <EmployerId>
+                           <!--Optional:-->
+                           <Type>?</Type>
+                           <!--Optional:-->
+                           <Code>?</Code>
+                           <!--Optional:-->
+                           <CountryCode>?</CountryCode>
+                           <!--Optional:-->
+                           <CountryName>?</CountryName>
+                        </EmployerId>
+                        <!--Optional:-->
+                        <EmployerName>?</EmployerName>
+                        <!--Optional:-->
+                        <WageSec>?</WageSec>
+                     </SubstitutePayer>
+                  </Payer>
+               </DeliveryData>
+               <ReportData>
+                  <IRReportId>?</IRReportId>
+                  <!--Optional:-->
+                  <ReportId>?</ReportId>
+                  <ReportStatus>?</ReportStatus>
+                  <ReportVersion>?</ReportVersion>
+                  <ReceivedTimestamp>?</ReceivedTimestamp>
+                  <!--Optional:-->
+                  <CreatedTimestamp>?</CreatedTimestamp>
+               </ReportData>
+               <!--Optional:-->
+               <IncomeEarner>
+                  <!--Optional:-->
+                  <IncomeEarnerIds>
+                     <!--1 or more repetitions:-->
+                     <Id>
+                        <!--Optional:-->
+                        <Type>?</Type>
+                        <!--Optional:-->
+                        <Code>?</Code>
+                        <!--Optional:-->
+                        <CountryCode>?</CountryCode>
+                        <!--Optional:-->
+                        <CountryName>?</CountryName>
+                     </Id>
+                  </IncomeEarnerIds>
+                  <!--Optional:-->
+                  <IncomeEarnerBasic>
+                     <!--Optional:-->
+                     <MissingId>?</MissingId>
+                     <!--Optional:-->
+                     <CompanyName>?</CompanyName>
+                     <!--Optional:-->
+                     <LastName>?</LastName>
+                     <!--Optional:-->
+                     <FirstName>?</FirstName>
+                     <!--Optional:-->
+                     <BirthDate>?</BirthDate>
+                     <!--Optional:-->
+                     <Gender>?</Gender>
+                  </IncomeEarnerBasic>
+                  <!--Optional:-->
+                  <Addresses>
+                     <!--1 or more repetitions:-->
+                     <TypedAddress>
+                        <!--Optional:-->
+                        <AddressType>?</AddressType>
+                        <!--Optional:-->
+                        <Co>?</Co>
+                        <!--Optional:-->
+                        <Street>?</Street>
+                        <!--Optional:-->
+                        <POBox>?</POBox>
+                        <!--Optional:-->
+                        <PostalCode>?</PostalCode>
+                        <!--Optional:-->
+                        <PostOffice>?</PostOffice>
+                        <!--Optional:-->
+                        <CountryCode>?</CountryCode>
+                        <!--Optional:-->
+                        <CountryName>?</CountryName>
+                     </TypedAddress>
+                  </Addresses>
+                  <!--Optional:-->
+                  <SubOrgs>
+                     <!--1 or more repetitions:-->
+                     <SubOrg>
+                        <!--Optional:-->
+                        <Type>?</Type>
+                        <!--Optional:-->
+                        <Code>?</Code>
+                     </SubOrg>
+                  </SubOrgs>
+                  <!--Optional:-->
+                  <Employment>
+                     <!--Optional:-->
+                     <Employed>?</Employed>
+                     <!--Optional:-->
+                     <EmploymentCode>?</EmploymentCode>
+                     <!--Optional:-->
+                     <TermCode>?</TermCode>
+                     <!--Optional:-->
+                     <PartTime>?</PartTime>
+                     <!--Optional:-->
+                     <HoursPerWeek>?</HoursPerWeek>
+                     <!--Optional:-->
+                     <PaymentTypes>
+                        <!--1 or more repetitions:-->
+                        <PaymentType>?</PaymentType>
+                     </PaymentTypes>
+                     <!--Optional:-->
+                     <EmploymentPeriods>
+                        <!--1 or more repetitions:-->
+                        <Period>
+                           <!--Optional:-->
+                           <StartDate>?</StartDate>
+                           <!--Optional:-->
+                           <EndDate>?</EndDate>
+                        </Period>
+                     </EmploymentPeriods>
+                     <!--Optional:-->
+                     <EmploymentEndings>
+                        <!--1 or more repetitions:-->
+                        <EmploymentEnding>
+                           <!--Optional:-->
+                           <Type>?</Type>
+                           <!--Optional:-->
+                           <Code>?</Code>
+                        </EmploymentEnding>
+                     </EmploymentEndings>
+                  </Employment>
+                  <!--Optional:-->
+                  <Professions>
+                     <!--1 or more repetitions:-->
+                     <Profession>
+                        <!--Optional:-->
+                        <Type>?</Type>
+                        <!--Optional:-->
+                        <Code>?</Code>
+                        <!--Optional:-->
+                        <Title>?</Title>
+                     </Profession>
+                  </Professions>
+                  <!--Optional:-->
+                  <EmploymentRegs>
+                     <!--1 or more repetitions:-->
+                     <EmploymentReg>
+                        <!--Optional:-->
+                        <Type>?</Type>
+                        <!--Optional:-->
+                        <Code>?</Code>
+                     </EmploymentReg>
+                  </EmploymentRegs>
+                  <!--Optional:-->
+                  <PlaceOfBusiness>
+                     <!--Optional:-->
+                     <Code>?</Code>
+                     <!--Optional:-->
+                     <Street>?</Street>
+                     <!--Optional:-->
+                     <PostalCode>?</PostalCode>
+                     <!--Optional:-->
+                     <PostOffice>?</PostOffice>
+                     <!--Optional:-->
+                     <CountryCode>?</CountryCode>
+                     <!--Optional:-->
+                     <CountryName>?</CountryName>
+                  </PlaceOfBusiness>
+                  <!--Optional:-->
+                  <PensionInsurance>
+                     <!--Optional:-->
+                     <PensionActCode>?</PensionActCode>
+                     <!--Optional:-->
+                     <PensionProvIdCode>?</PensionProvIdCode>
+                     <!--Optional:-->
+                     <PensionPolicyNo>?</PensionPolicyNo>
+                  </PensionInsurance>
+                  <!--Optional:-->
+                  <AccidentInsurance>
+                     <!--Optional:-->
+                     <AccInsProvId>
+                        <!--Optional:-->
+                        <Type>?</Type>
+                        <!--Optional:-->
+                        <Code>?</Code>
+                        <!--Optional:-->
+                        <CountryCode>?</CountryCode>
+                        <!--Optional:-->
+                        <CountryName>?</CountryName>
+                     </AccInsProvId>
+                     <!--Optional:-->
+                     <AccInsPolicyNo>?</AccInsPolicyNo>
+                  </AccidentInsurance>
+                  <!--Optional:-->
+                  <InsuranceExceptions>
+                     <!--1 or more repetitions:-->
+                     <ExceptionCode>?</ExceptionCode>
+                  </InsuranceExceptions>
+                  <!--Optional:-->
+                  <InternationalData>
+                     <!--Optional:-->
+                     <PostedCertCode>?</PostedCertCode>
+                     <!--Optional:-->
+                     <NonResident>?</NonResident>
+                     <!--Optional:-->
+                     <NonResidentCountryCode>?</NonResidentCountryCode>
+                     <!--Optional:-->
+                     <NonResidentCountryName>?</NonResidentCountryName>
+                     <!--Optional:-->
+                     <SubToWithhold>?</SubToWithhold>
+                     <!--Optional:-->
+                     <TaxTreatyCountryCode>?</TaxTreatyCountryCode>
+                     <!--Optional:-->
+                     <WorkForm>
+                        <!--1 or more repetitions:-->
+                        <FormCode>?</FormCode>
+                     </WorkForm>
+                  </InternationalData>
+                  <!--Optional:-->
+                  <IncomeEarnerOther>
+                     <!--Optional:-->
+                     <SensitiveInfoIncluded>?</SensitiveInfoIncluded>
+                     <!--Optional:-->
+                     <CBACode>?</CBACode>
+                     <!--Optional:-->
+                     <IncomeEarnerTypes>
+                        <!--1 or more repetitions:-->
+                        <IncomeEarnerType>?</IncomeEarnerType>
+                     </IncomeEarnerTypes>
+                     <!--Optional:-->
+                     <Payments>
+                        <!--1 or more repetitions:-->
+                        <Payment>
+                           <!--Optional:-->
+                           <PaymentType>?</PaymentType>
+                           <!--Optional:-->
+                           <PaymentRef>?</PaymentRef>
+                           <!--Optional:-->
+                           <PaymentSpecifier>?</PaymentSpecifier>
+                        </Payment>
+                     </Payments>
+                  </IncomeEarnerOther>
+               </IncomeEarner>
+               <!--Optional:-->
+               <Transactions>
+                  <!--1 or more repetitions:-->
+                  <Transaction>
+                     <!--Optional:-->
+                     <TransactionBasic>
+                        <!--Optional:-->
+                        <TransactionCode>?</TransactionCode>
+                        <!--Optional:-->
+                        <Amount>?</Amount>
+                        <!--Optional:-->
+                        <NoMoney>?</NoMoney>
+                        <!--Optional:-->
+                        <OneOff>?</OneOff>
+                        <!--Optional:-->
+                        <UnjustEnrichment>?</UnjustEnrichment>
+                        <!--Optional:-->
+                        <Recovery>?</Recovery>
+                     </TransactionBasic>
+                     <!--Optional:-->
+                     <InsuranceData>
+                        <!--1 or more repetitions:-->
+                        <TransactionInclusion>
+                           <!--Optional:-->
+                           <InsuranceCode>?</InsuranceCode>
+                           <!--Optional:-->
+                           <Included>?</Included>
+                        </TransactionInclusion>
+                     </InsuranceData>
+                     <!--Optional:-->
+                     <EarningPeriods>
+                        <!--1 or more repetitions:-->
+                        <EarningPeriod>
+                           <!--Optional:-->
+                           <StartDate>?</StartDate>
+                           <!--Optional:-->
+                           <EndDate>?</EndDate>
+                        </EarningPeriod>
+                     </EarningPeriods>
+                     <!--Optional:-->
+                     <UnitWages>
+                        <!--1 or more repetitions:-->
+                        <UnitWage>
+                           <!--Optional:-->
+                           <UnitPrice>?</UnitPrice>
+                           <!--Optional:-->
+                           <UnitAmount>?</UnitAmount>
+                           <!--Optional:-->
+                           <UnitCode>?</UnitCode>
+                        </UnitWage>
+                     </UnitWages>
+                     <!--Optional:-->
+                     <CarBenefit>
+                        <!--Optional:-->
+                        <CarBenefitCode>?</CarBenefitCode>
+                        <!--Optional:-->
+                        <AgeGroupCode>?</AgeGroupCode>
+                        <!--Optional:-->
+                        <Kilometers>?</Kilometers>
+                     </CarBenefit>
+                     <!--Optional:-->
+                     <MealBenefit>
+                        <TaxValue>?</TaxValue>
+                     </MealBenefit>
+                     <!--Optional:-->
+                     <OtherBenefit>
+                        <!--1 or more repetitions:-->
+                        <BenefitCode>?</BenefitCode>
+                     </OtherBenefit>
+                     <!--Optional:-->
+                     <SailorIncome>
+                        <!--Optional:-->
+                        <SailorIncome>?</SailorIncome>
+                        <!--Optional:-->
+                        <CrossTradeTime>?</CrossTradeTime>
+                        <!--Optional:-->
+                        <WithdrawalPeriod>
+                           <!--Optional:-->
+                           <StartDate>?</StartDate>
+                           <!--Optional:-->
+                           <EndDate>?</EndDate>
+                        </WithdrawalPeriod>
+                     </SailorIncome>
+                     <!--Optional:-->
+                     <RecoveryData>
+                        <!--Optional:-->
+                        <RecoveryDate>?</RecoveryDate>
+                        <!--Optional:-->
+                        <Withhold>?</Withhold>
+                        <!--Optional:-->
+                        <OrigPaymentPeriods>
+                           <!--1 or more repetitions:-->
+                           <OrigPaymentPeriod>
+                              <!--Optional:-->
+                              <PaymentDate>?</PaymentDate>
+                              <!--Optional:-->
+                              <StartDate>?</StartDate>
+                              <!--Optional:-->
+                              <EndDate>?</EndDate>
+                           </OrigPaymentPeriod>
+                        </OrigPaymentPeriods>
+                     </RecoveryData>
+                     <!--Optional:-->
+                     <DailyAllowance>
+                        <!--1 or more repetitions:-->
+                        <AllowanceCode>?</AllowanceCode>
+                     </DailyAllowance>
+                     <!--Optional:-->
+                     <KmAllowance>
+                        <Kilometers>?</Kilometers>
+                     </KmAllowance>
+                     <!--Optional:-->
+                     <SixMonthRule>
+                        <!--Optional:-->
+                        <Applicable>?</Applicable>
+                        <!--Optional:-->
+                        <CountryCode>?</CountryCode>
+                        <!--Optional:-->
+                        <CountryName>?</CountryName>
+                     </SixMonthRule>
+                  </Transaction>
+               </Transactions>
+               <!--Optional:-->
+               <ForeignLeasedWork>
+                  <!--Optional:-->
+                  <Representative>
+                     <!--Optional:-->
+                     <SensitiveInfoIncluded>?</SensitiveInfoIncluded>
+                     <!--Optional:-->
+                     <RepresentativeIds>
+                        <!--1 or more repetitions:-->
+                        <Id>
+                           <!--Optional:-->
+                           <Type>?</Type>
+                           <!--Optional:-->
+                           <Code>?</Code>
+                           <!--Optional:-->
+                           <CountryCode>?</CountryCode>
+                           <!--Optional:-->
+                           <CountryName>?</CountryName>
+                        </Id>
+                     </RepresentativeIds>
+                     <!--Optional:-->
+                     <Name>?</Name>
+                     <!--Optional:-->
+                     <Address>
+                        <!--Optional:-->
+                        <Co>?</Co>
+                        <!--Optional:-->
+                        <Street>?</Street>
+                        <!--Optional:-->
+                        <POBox>?</POBox>
+                        <!--Optional:-->
+                        <PostalCode>?</PostalCode>
+                        <!--Optional:-->
+                        <PostOffice>?</PostOffice>
+                        <!--Optional:-->
+                        <CountryCode>?</CountryCode>
+                        <!--Optional:-->
+                        <CountryName>?</CountryName>
+                     </Address>
+                     <!--Optional:-->
+                     <RepresentativeReports>?</RepresentativeReports>
+                  </Representative>
+                  <!--Optional:-->
+                  <EstAmount>?</EstAmount>
+                  <!--Optional:-->
+                  <FinServiceRecipient>
+                     <FinServiceRecipientIds>
+                        <!--1 or more repetitions:-->
+                        <Id>
+                           <!--Optional:-->
+                           <Type>?</Type>
+                           <!--Optional:-->
+                           <Code>?</Code>
+                           <!--Optional:-->
+                           <CountryCode>?</CountryCode>
+                           <!--Optional:-->
+                           <CountryName>?</CountryName>
+                        </Id>
+                     </FinServiceRecipientIds>
+                  </FinServiceRecipient>
+               </ForeignLeasedWork>
+               <!--Optional:-->
+               <StayPeriodsInFinland>
+                  <!--Optional:-->
+                  <NoStayPeriods>?</NoStayPeriods>
+                  <!--Zero or more repetitions:-->
+                  <Period>
+                     <!--Optional:-->
+                     <StartDate>?</StartDate>
+                     <!--Optional:-->
+                     <EndDate>?</EndDate>
+                  </Period>
+               </StayPeriodsInFinland>
+               <!--Optional:-->
+               <WorkPeriodsInFinland>
+                  <!--1 or more repetitions:-->
+                  <WorkPeriodInFinland>
+                     <!--Optional:-->
+                     <StartDate>?</StartDate>
+                     <!--Optional:-->
+                     <EndDate>?</EndDate>
+                     <!--Optional:-->
+                     <WorkDays>?</WorkDays>
+                  </WorkPeriodInFinland>
+               </WorkPeriodsInFinland>
+               <!--Optional:-->
+               <WorkCountries>
+                  <!--1 or more repetitions:-->
+                  <WorkCountry>
+                     <!--Optional:-->
+                     <WorkCountryCode>?</WorkCountryCode>
+                     <!--Optional:-->
+                     <WorkCountryName>?</WorkCountryName>
+                     <!--Optional:-->
+                     <WorkMunicipalities>
+                        <!--1 or more repetitions:-->
+                        <WorkMunicipality>?</WorkMunicipality>
+                     </WorkMunicipalities>
+                     <!--Optional:-->
+                     <WorkCountryAddress>
+                        <!--Optional:-->
+                        <Co>?</Co>
+                        <!--Optional:-->
+                        <Street>?</Street>
+                        <!--Optional:-->
+                        <POBox>?</POBox>
+                        <!--Optional:-->
+                        <PostalCode>?</PostalCode>
+                        <!--Optional:-->
+                        <PostOffice>?</PostOffice>
+                        <!--Optional:-->
+                        <CountryCode>?</CountryCode>
+                        <!--Optional:-->
+                        <CountryName>?</CountryName>
+                     </WorkCountryAddress>
+                     <!--Optional:-->
+                     <ServiceRecipient>
+                        <!--Optional:-->
+                        <SensitiveInfoIncluded>?</SensitiveInfoIncluded>
+                        <!--Optional:-->
+                        <ServiceRecipientIds>
+                           <!--1 or more repetitions:-->
+                           <Id>
+                              <!--Optional:-->
+                              <Type>?</Type>
+                              <!--Optional:-->
+                              <Code>?</Code>
+                              <!--Optional:-->
+                              <CountryCode>?</CountryCode>
+                              <!--Optional:-->
+                              <CountryName>?</CountryName>
+                           </Id>
+                        </ServiceRecipientIds>
+                        <!--Optional:-->
+                        <Name>?</Name>
+                        <!--Optional:-->
+                        <ServiceRecipientAddress>
+                           <!--Optional:-->
+                           <Co>?</Co>
+                           <!--Optional:-->
+                           <Street>?</Street>
+                           <!--Optional:-->
+                           <POBox>?</POBox>
+                           <!--Optional:-->
+                           <PostalCode>?</PostalCode>
+                           <!--Optional:-->
+                           <PostOffice>?</PostOffice>
+                           <!--Optional:-->
+                           <CountryCode>?</CountryCode>
+                           <!--Optional:-->
+                           <CountryName>?</CountryName>
+                        </ServiceRecipientAddress>
+                     </ServiceRecipient>
+                     <!--Optional:-->
+                     <StayPeriodsAbroad>
+                        <!--1 or more repetitions:-->
+                        <Period>
+                           <!--Optional:-->
+                           <StartDate>?</StartDate>
+                           <!--Optional:-->
+                           <EndDate>?</EndDate>
+                        </Period>
+                     </StayPeriodsAbroad>
+                     <!--Optional:-->
+                     <WorkPeriodsAbroad>
+                        <!--1 or more repetitions:-->
+                        <Period>
+                           <!--Optional:-->
+                           <StartDate>?</StartDate>
+                           <!--Optional:-->
+                           <EndDate>?</EndDate>
+                        </Period>
+                     </WorkPeriodsAbroad>
+                     <!--Optional:-->
+                     <TaxingRight>?</TaxingRight>
+                     <!--Optional:-->
+                     <BurdensResultOfPE>?</BurdensResultOfPE>
+                     <!--Optional:-->
+                     <WagePerMonth>?</WagePerMonth>
+                     <!--Optional:-->
+                     <Remunerations>
+                        <!--1 or more repetitions:-->
+                        <RemunerationCode>?</RemunerationCode>
+                     </Remunerations>
+                  </WorkCountry>
+               </WorkCountries>
+               <!--Optional:-->
+               <Absence>
+                  <!--Optional:-->
+                  <AbsenceRepStartDate>?</AbsenceRepStartDate>
+                  <!--Optional:-->
+                  <AbsenceRepEndDate>?</AbsenceRepEndDate>
+                  <!--Optional:-->
+                  <UnpaidAbsence>
+                     <UnpaidAbsencePeriods>
+                        <!--1 or more repetitions:-->
+                        <UnpaidAbsencePeriod>
+                           <!--Optional:-->
+                           <StartDate>?</StartDate>
+                           <!--Optional:-->
+                           <EndDate>?</EndDate>
+                           <!--Optional:-->
+                           <AbsenceDays>?</AbsenceDays>
+                           <!--Optional:-->
+                           <CauseCode>?</CauseCode>
+                        </UnpaidAbsencePeriod>
+                     </UnpaidAbsencePeriods>
+                  </UnpaidAbsence>
+                  <!--Optional:-->
+                  <PaidAbsence>
+                     <PaidAbsencePeriods>
+                        <!--1 or more repetitions:-->
+                        <PaidAbsencePeriod>
+                           <!--Optional:-->
+                           <StartDate>?</StartDate>
+                           <!--Optional:-->
+                           <EndDate>?</EndDate>
+                           <!--Optional:-->
+                           <AbsenceDays>?</AbsenceDays>
+                           <!--Optional:-->
+                           <AbsenceUntil>?</AbsenceUntil>
+                           <!--Optional:-->
+                           <CauseCode>?</CauseCode>
+                           <!--Optional:-->
+                           <Amount>?</Amount>
+                           <!--Optional:-->
+                           <ReimbApp>
+                              <!--1 or more repetitions:-->
+                              <ReimbPayment>
+                                 <!--Optional:-->
+                                 <PaymentType>?</PaymentType>
+                                 <!--Optional:-->
+                                 <PaymentRef>?</PaymentRef>
+                                 <!--Optional:-->
+                                 <PaymentSpecifier>?</PaymentSpecifier>
+                              </ReimbPayment>
+                           </ReimbApp>
+                        </PaidAbsencePeriod>
+                     </PaidAbsencePeriods>
+                  </PaidAbsence>
+               </Absence>
+            </Report>
+         </Reports>
+         <xd:Signature Id="?">
+            <xd:SignedInfo Id="?">
+               <xd:CanonicalizationMethod Algorithm="?">
+                  e
+                  <!--You may enter ANY elements at this point-->
+                  gero
+               </xd:CanonicalizationMethod>
+               <xd:SignatureMethod Algorithm="?">
+                  cum
+                  <!--Optional:-->
+                  <xd:HMACOutputLength>?</xd:HMACOutputLength>
+                  sonoras
+                  <!--You may enter ANY elements at this point-->
+                  aeoliam
+               </xd:SignatureMethod>
+               <!--1 or more repetitions:-->
+               <xd:Reference Id="?" URI="?" Type="?">
+                  <!--Optional:-->
+                  <xd:Transforms>
+                     <!--1 or more repetitions:-->
+                     <xd:Transform Algorithm="?">
+                        quae
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <!--You may enter ANY elements at this point-->
+                        <xd:XPath>?</xd:XPath>
+                        ventos
+                     </xd:Transform>
+                  </xd:Transforms>
+                  <xd:DigestMethod Algorithm="?">
+                     verrantque
+                     <!--You may enter ANY elements at this point-->
+                     temperat
+                  </xd:DigestMethod>
+                  <xd:DigestValue>cid:647157468742</xd:DigestValue>
+               </xd:Reference>
+            </xd:SignedInfo>
+            <xd:SignatureValue Id="?">cid:1033065353944</xd:SignatureValue>
+            <!--Optional:-->
+            <xd:KeyInfo Id="?">
+               per
+               <!--You have a CHOICE of the next 8 items at this level-->
+               <xd:KeyName>?</xd:KeyName>
+               <xd:KeyValue>
+                  turbine
+                  <!--You have a CHOICE of the next 3 items at this level-->
+                  <xd:DSAKeyValue>
+                     <xd:P>cid:718444778462</xd:P>
+                     <xd:Q>cid:689252293910</xd:Q>
+                     <!--Optional:-->
+                     <xd:G>cid:242534355599</xd:G>
+                     <xd:Y>cid:85204017716</xd:Y>
+                     <!--Optional:-->
+                     <xd:J>cid:47163278519</xd:J>
+                     <xd:Seed>cid:1185932156429</xd:Seed>
+                     <xd:PgenCounter>cid:352193841483</xd:PgenCounter>
+                  </xd:DSAKeyValue>
+                  <xd:RSAKeyValue>
+                     <xd:Modulus>cid:947285814482</xd:Modulus>
+                     <xd:Exponent>cid:123067244383</xd:Exponent>
+                  </xd:RSAKeyValue>
+                  <!--You may enter ANY elements at this point-->
+                  circum
+               </xd:KeyValue>
+               <xd:RetrievalMethod URI="?" Type="?">
+                  <!--Optional:-->
+                  <xd:Transforms>
+                     <!--1 or more repetitions:-->
+                     <xd:Transform Algorithm="?">
+                        regemque
+                        <!--You have a CHOICE of the next 2 items at this level-->
+                        <!--You may enter ANY elements at this point-->
+                        <xd:XPath>?</xd:XPath>
+                        nimborum
+                     </xd:Transform>
+                  </xd:Transforms>
+               </xd:RetrievalMethod>
+               <xd:X509Data>
+                  <!--You have a CHOICE of the next 6 items at this level-->
+                  <xd:X509IssuerSerial>
+                     <xd:X509IssuerName>?</xd:X509IssuerName>
+                     <xd:X509SerialNumber>?</xd:X509SerialNumber>
+                  </xd:X509IssuerSerial>
+                  <xd:X509SKI>cid:1437029161008</xd:X509SKI>
+                  <xd:X509SubjectName>?</xd:X509SubjectName>
+                  <xd:X509Certificate>cid:611268707339</xd:X509Certificate>
+                  <xd:X509CRL>cid:67106851987</xd:X509CRL>
+                  <!--You may enter ANY elements at this point-->
+               </xd:X509Data>
+               <xd:PGPData>
+                  <!--You have a CHOICE of the next 2 items at this level-->
+                  <xd:PGPKeyID>cid:463487308265</xd:PGPKeyID>
+                  <!--Optional:-->
+                  <xd:PGPKeyPacket>cid:1067709365449</xd:PGPKeyPacket>
+                  <!--You may enter ANY elements at this point-->
+                  <xd:PGPKeyPacket>cid:262492830438</xd:PGPKeyPacket>
+                  <!--You may enter ANY elements at this point-->
+               </xd:PGPData>
+               <xd:SPKIData>
+                  <xd:SPKISexp>cid:624910409613</xd:SPKISexp>
+                  <!--You may enter ANY elements at this point-->
+               </xd:SPKIData>
+               <xd:MgmtData>?</xd:MgmtData>
+               <!--You may enter ANY elements at this point-->
+               fremunt
+            </xd:KeyInfo>
+            <!--Zero or more repetitions:-->
+            <xd:Object Id="?" MimeType="?" Encoding="?">
+               foedere
+               <!--You may enter ANY elements at this point-->
+               ferant
+            </xd:Object>
+         </xd:Signature>
+      </wag:WageReportsFromIR>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:responseContent><con:wsaConfig mustUnderstand="NONE" version="200508" action="GetWageReportsOneIncomeEarner"/></con:response><con:dispatchConfig/></con:mockOperation></con:mockService><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
